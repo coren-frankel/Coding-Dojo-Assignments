@@ -4,22 +4,55 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        
+        div {
+            margin: 5px;
+        }
+        #selfie {
+            width: 200px;
+            border: 2px solid;
+            border-radius: 10px;
+        }
+        .logo {
+            display: inline-flex;
+            justify-content: center;
+            width: 25px;
+            border-radius: 7px;
+        }
+        th {
+            border-right: 2px solid;
+            border-bottom: 2px solid;
+        }
+        td {
+            border-top: 2px solid;
+            border-right: 2px solid;
+        }
+        #crud {
+            width: 60px;
+        }
+        #message {
+            display: flex;
+
+        }
+    </style>
     <title>Portfolio</title>
 </head>
 <body>
     <h1>Coren "Kern" Frankel</h1>
-    <img id="selfie" src="" alt="Photo of Coren Frankel">
+    <img id="selfie" src="profilepic.jpg" alt="Photo by Andrew Spencer on Unsplash</a>
+    ">
     <div id="links">
-        <img class="logo" src="" alt="github logo">
-        <a href="">my github</a>
-        <img class="logo" src="" alt="linkedin logo">
-        <a href="">my linkedIn</a>
-        <img class="logo" src="" alt="email logo">
-        <a href="">my email</a>
+        <img class="logo" src="github_icon.png" alt="github logo">
+        <a href="https://github.com/coren-frankel">my github</a>
+        <img class="logo" src="linkedin_icon.png" alt="linkedin logo">
+        <a href="https://www.linkedin.com/in/coren-frankel">my linkedIn</a>
+        <img class="logo" src="email_icon.png" alt="email logo">
+        <a href=mailto:"coren.frankel@gmail.com">my email</a>
     </div>
     <div id="technologies">
         <table>
-            <caption>Technologies</caption>
+            <h3>Technologies</h3>
             <tr>
                 <th>Front-End</th>
                 <th>Python</th>
@@ -51,13 +84,30 @@
         </table>
     </div>
     <div>
-    <h3>Social Snakes</h3>
-    <img id="break" src="" alt="tag break">
-    Social Media App made in Python - <a href="github.io">code</a> | <a href="app.deployed">deployed</a>
+        <h3>Social Snakes</h3>
+        <img id="crud" src="generic_icon.png" alt="generic app logo">
+        <p>
+            Social Media App made in Python - 
+            <a href="github.io">code</a> 
+            | 
+            <a href="app.deployed">deployed</a>
+        </p>
     </div>
     <div class="sections">
         <h3>Contact Me</h3>
-        <label for="name">Name: </label><
+        <div>
+            <label for="name">Name: </label><input name="name" type="text">
+            <label for="name">Email: </label><input name= "email" type="text" cols="20" rows="1">
+        </div>
+        <br>
+        <div id="message">
+            <label for="message">Message: </label>
+            <textarea name="message" cols="20" rows="3"></textarea>
+        </div>
+        <br>
+        <div>
+            <input type="submit" value="Send Message">
+        </div>
     </div>
 </body>
 </html>
