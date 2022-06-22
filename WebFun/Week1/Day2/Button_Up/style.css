@@ -1,0 +1,35 @@
+div {
+    margin: 40px;
+}
+button {
+    display: block;
+    margin: 10px;
+}
+#search,
+#plus {
+    border-radius: 20px;
+}
+#search {
+    color: lightseagreen;
+    border: 2px solid lightseagreen;
+    background-color: ghostwhite;
+    text-align: center;
+    width: 130px;
+    height: 2em;
+}
+#plus {
+    width: 2rem;
+    height: 2rem;
+    font-size: x-large;
+    border: none;
+    color: white;
+    background-color: mediumturquoise;
+}
+#create {
+    width: 150px;
+    height: 2rem;
+    border: 2px solid black;
+    background-color: dodgerblue;
+    color: white;
+    box-shadow: 3px 3px black;
+}

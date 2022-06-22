@@ -1,0 +1,31 @@
+* {
+    font-family: sans-serif;
+}
+h1,
+h2,
+h3 {
+    padding: 5px 15px;
+}
+h1 {
+    color: white;
+    background-color: black;
+    text-align: left;
+}
+.cloud {
+    color: aqua;
+}
+h2 {
+    color: white;
+    background-color: rebeccapurple;
+    font-style: italic;
+    text-align: center;
+    font-weight: 400;
+}
+h3 {
+    background-color: rgb(156, 190, 253);
+    text-align: right;
+}
+a {
+    font-weight:lighter;
+    color: black;
+}
