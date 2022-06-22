@@ -8,7 +8,7 @@
 }
 .top-nav {
     height: 150px;
-    
+
     margin: 10px;
     padding: 10px;
     background-color: green;;
@@ -34,7 +34,7 @@
     display: inline-block;
     box-sizing: border-box;
     height: 200px;
-    width: 210px;
+    width: 200px;
     margin: 5px;
     background-color: yellow;
 }
@@ -42,7 +42,6 @@
     display: block;
     height: 120px;
     width: 660px;
-    margin: 4px;
-    box-sizing: content-box;
+    box-sizing: border-box;
     background-color: purple;
 }
