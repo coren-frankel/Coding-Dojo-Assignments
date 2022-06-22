@@ -34,7 +34,7 @@
     display: inline-block;
     box-sizing: border-box;
     height: 200px;
-    width: 200px;
+    width: 210px;
     margin: 5px;
     background-color: yellow;
 }
@@ -42,6 +42,7 @@
     display: block;
     height: 120px;
     width: 660px;
+    margin: 4px;
     box-sizing: border-box;
     background-color: purple;
 }
