@@ -1,0 +1,33 @@
+h1 {
+    display: flex;
+    justify-content: center;
+    font-family: sans-serif;
+    color: rgb(85, 85, 85);
+}
+img {
+    height: 200px;
+}
+div {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+}
+.top {
+    background-color: rgb(31, 31, 31);
+    justify-content: space-between;
+}
+.mid {
+    background-color: salmon;
+    justify-content: space-evenly;
+}
+.bottom {
+    background-color: yellow;
+    justify-content: space-around;
+}
+a {
+    color: lightblue;
+    }
+footer {
+    text-align: center;
+    color: grey;
+}
