@@ -1,5 +1,5 @@
 * {
-    font-family: sans-serif;
+    font-family: 'Roboto', sans-serif;
 }
 
 .nav {
@@ -13,7 +13,7 @@
 .nav-title {
     
     color: white;
-    font-weight: 300;
+    font-weight: bolder;
 }
 .nav-links {
     display: flex;
@@ -21,13 +21,14 @@
 }
 li {
     list-style: none;
-    font-weight: 300;
+    font-weight: 900px;
     padding: 10px;
     flex-wrap: nowrap;
     align-self: center;
 }
 a {
     color: rgb(206, 206, 206);
+    flex-wrap: nowrap;
     text-decoration: none;
 }
 .active {
