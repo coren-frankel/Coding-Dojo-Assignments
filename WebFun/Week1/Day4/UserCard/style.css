@@ -1,18 +1,77 @@
 * {
+    font-family: 'Quicksand', sans-serif;
     margin: 0;
     padding: 0;
 }
-
-body {
+#navbar {
     display: flex;
-    justify-content: center;
-    padding: 50px;
-    font-family: 'Quicksand', sans-serif;
+    height: 2em;
+    padding: 10px 180px;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgb(57, 57, 57);
+}
+#proflinks {
+    display: flex;
+    justify-content: flex-start;
 }
 
-#container {
+#nav-title {
+    margin-right: 30px;;
+    color: white;
+    font-weight: bolder;
+}
+#nav-links {
+    display: flex;
+    
+}
+ul {
+}
+li {
+    list-style: none;
+    font-weight: 900px;
+    padding: 10px;
+}
+a {
+    color: rgb(206, 206, 206);
+    flex-wrap: nowrap;
+    text-decoration: none;
+}
+.active {
+    color: white;
+}
+.btn {
+    color: white;
+    border: 3px solid black;
+    height: 2em;
+    padding: 0 10px;
+    background-color: rgb(3, 150, 176);
+    box-shadow: 2px 2px black;
+}
+#profilebody {
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+    padding: 20px 180px;
+    column-gap: 40px;
+}
+#col1 {
+    display: flex;
+    flex-direction: column;
+    flex: 2;
+    gap: 40px;
+}
+#col2 {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    flex: 1;
+}
+
+#usercard,
+#education {
     height: 300px;
-    width: 600px;
+    /* width: 600px; */
     display: flex;
     flex-direction: column;
 }
@@ -24,6 +83,13 @@ body {
     border: 5px solid rgb(3, 150, 176);
     height: 70px;
 }
+.greyhead {
+    display: flex;
+    background-color: rgb(57, 57, 57);
+    height: fit-content;
+    border: 5px solid rgb(57, 57, 57);
+    height: 40px;
+}
 
 #words {
     border: 3px solid darkgrey;
@@ -33,14 +99,14 @@ body {
     flex-direction: column;
 }
 
-#profile {
+#userpic {
     border: 5px solid white;
     
     border-radius: 50%;
     height: 70px;
-    /* position: relative; */
-    /* top: 36px; */
-    /* left: 20px; */
+    /* position: relative;
+    top: 36px;
+    left: 20px; */
     filter: invert(1);
 }
 
@@ -49,18 +115,20 @@ body {
     border-radius: 50%;
     height: 80px;
     position: relative;
-    top: 36px;
+    top: 31px;
     left: 20px;
     box-shadow: 0px 0px 0px 2px rgb(204, 204, 204);
 }
 
-h1 {
+#name {
     margin-top: 20px;
     margin-bottom: 0;
 }
 
 .icon {
-    height: 100%;
+    height: 1em;
+    padding: 1px;
+    
     margin-right: 10px;
 
 }
@@ -70,15 +138,15 @@ h1 {
     justify-content: flex-start;
     align-items: center;
     font-weight: 700;
-    height: 18px;
+
 }
 
 .icon-line,
 #roles {
-    margin: 5px;
+    margin: 5px 0;
 
 }
 
-a {
+#edit {
     color: rgba(63, 89, 236, 0.867);
 }
