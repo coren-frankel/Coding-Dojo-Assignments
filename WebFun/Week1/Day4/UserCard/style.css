@@ -1,7 +1,60 @@
 body {
-    /* height: fit-content;
-    flex: 0 1 auto; */
+    display: flex;
+    justify-content: center;
+    padding: 50px;
+    font-family: 'Quicksand', sans-serif;
 }
-header {
-    height: 254px;
+#container {
+    height: 300px;
+    width: 600px;
+    display: flex;
+    
+    flex-direction: column;
+}
+#head {
+    display: flex;
+    background-color: cadetblue;
+    height: fit-content;
+    border: 5px solid cadetblue;
+    height: 70px;
+}
+#words {
+    border: 3px solid darkgrey;
+    border-top: none;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+}
+#profile {
+    border: 5px solid white;
+    border-radius: 50%;
+    height: 70px;
+    position: relative;
+    top: 35px;
+    left:20px;
+}
+h1 {
+    margin-bottom: 0;
+}
+.icon {
+    height: 100%;
+    margin-right: 10px;
+
+}
+
+.icon-line {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    font-weight: 700;
+    height: 18px;
+}
+
+.icon-line,
+#roles {
+    margin: 5px;
+    
+}
+a{
+    color: rgba(63, 89, 236, 0.867);
 }
