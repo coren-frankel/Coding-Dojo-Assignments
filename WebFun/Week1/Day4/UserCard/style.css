@@ -19,9 +19,9 @@ body {
 
 #head {
     display: flex;
-    background-color: cadetblue;
+    background-color: rgb(3, 150, 176);
     height: fit-content;
-    border: 5px solid cadetblue;
+    border: 5px solid rgb(3, 150, 176);
     height: 70px;
 }
 
@@ -35,11 +35,13 @@ body {
 
 #profile {
     border: 5px solid white;
+    /* box-shadow: 5px 10px 10px solid black; */
     border-radius: 50%;
     height: 70px;
     position: relative;
     top: 36px;
     left: 20px;
+    filter: invert(1);
 }
 
 h1 {
