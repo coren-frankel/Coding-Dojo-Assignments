@@ -35,17 +35,27 @@ body {
 
 #profile {
     border: 5px solid white;
-    /* box-shadow: 5px 10px 10px solid black; */
+    
     border-radius: 50%;
     height: 70px;
-    position: relative;
-    top: 36px;
-    left: 20px;
+    /* position: relative; */
+    /* top: 36px; */
+    /* left: 20px; */
     filter: invert(1);
 }
 
+#jane {
+    border: 2px solid white;
+    border-radius: 50%;
+    height: 80px;
+    position: relative;
+    top: 36px;
+    left: 20px;
+    box-shadow: 0px 0px 0px 2px rgb(204, 204, 204);
+}
+
 h1 {
-    margin-top: 15px;
+    margin-top: 20px;
     margin-bottom: 0;
 }
 
