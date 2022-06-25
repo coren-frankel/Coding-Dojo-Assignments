@@ -1,0 +1,113 @@
+/* CSS reset */
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+}
+
+.nav {
+    display: flex;
+    height: 2em;
+    padding: 10px;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgb(57, 57, 57);
+}
+
+.nav-title {
+
+    color: white;
+    font-weight: bolder;
+}
+
+.nav-links {
+    display: flex;
+
+}
+
+li {
+    list-style: none;
+    font-weight: 900px;
+    padding: 10px;
+    flex-wrap: nowrap;
+    align-self: center;
+}
+
+a {
+    color: rgb(206, 206, 206);
+    flex-wrap: nowrap;
+    text-decoration: none;
+}
+
+.active {
+    color: white;
+}
+
+.sign {
+    color: white;
+    border: 3px solid black;
+    height: 2em;
+    padding: 0 10px;
+    background-color: rgb(0, 177, 193);
+    box-shadow: 2px 2px black;
+}
+
+/* Fixed width container class that will "auto-center" itself */
+.container {
+    width: 1200px;
+    /* margin: 0 auto; */
+    margin: 40px -10px;
+}
+
+.btn {
+    width: 1.8rem;
+    height: 1.8rem;
+    border-radius: 50%;
+    font-size: 100%;
+    border: none;
+    color: white;
+    background-color: mediumturquoise;
+}
+
+.btn:active {
+    box-shadow: 2px 2px 2px aqua;
+}
+
+
+.row {
+    display: flex;
+    margin: 10px auto;
+}
+
+.col {
+    flex: 1;
+    display: flex;
+    height: 2em;
+    margin: 10px;
+    padding: 15px;
+    align-items: center;
+    background-color: darkcyan;
+    color: white;
+}
+
+.col-2 {
+    display: flex;
+    flex: 2;
+    height: 2em;
+    margin: 10px;
+    padding: 15px;
+    align-items: center;
+    background-color: darkcyan;
+    color: white;
+}
+
+.col-3 {
+    display: flex;
+    flex: 3;
+    height: 2em;
+    margin: 10px;
+    padding: 15px;
+    align-items: center;
+    background-color: darkcyan;
+    color: white;
+}
