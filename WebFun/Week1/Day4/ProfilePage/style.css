@@ -225,10 +225,11 @@ li {
     font-size: 110%;
 }
 .pics {
-    border: 3px solid white;
+    /* border: 3px solid black; */
     border-radius: 50%;
     height: 1.8em;
     width: 1.8em;
+    border: 3px solid white;
     filter: invert(1);
     margin-right: 10px;;
 }
