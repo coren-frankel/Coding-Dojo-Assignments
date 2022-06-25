@@ -5,11 +5,12 @@
 }
 #navbar {
     display: flex;
-    height: 2em;
-    padding: 10px 120px;
+    height: 2.5em;
+    padding: 10px 150px;
     justify-content: space-between;
     align-items: center;
-    background-color: rgb(57, 57, 57);
+    background-color: black;
+    /* background-color: rgb(57, 57, 57); */
 }
 #proflinks {
     display: flex;
@@ -17,9 +18,9 @@
 }
 
 #nav-title {
-    margin-right: 30px;;
+    margin-right: 20px;;
     color: white;
-    font-weight: bolder;
+    font-weight: 400;
 }
 #nav-links {
     display: flex;
@@ -35,13 +36,14 @@ li {
     flex-wrap: nowrap;
     text-decoration: none;
 }
-.active {
+#active {
     color: white;
 }
 .btn {
     color: white;
     border: 3px solid black;
     height: 2em;
+    font-size: 110%;
     padding: 0 10px;
     margin-right: 5px;
     background-color: rgb(3, 150, 176);
@@ -49,8 +51,9 @@ li {
 }
 #profilebody {
     display: flex;
-    padding: 20px 120px;
-    column-gap: 20px;
+    padding: 20px 150px;
+    gap: 20px;
+    
 }
 #col1 {
     display: flex;
@@ -62,104 +65,113 @@ li {
     display: flex;
     flex-direction: column;
     flex: 2;
-    /* gap: 20px; */
-
-    
+    gap: 20px;;
 }
 
 #usercard,
 #education,
 #connections,
 #your {
-    display: flex;
-    flex-direction: column;
+    margin-bottom: 10px;
 }
 
 #head {
     display: flex;
     background-color: rgb(3, 150, 176);
-    height: fit-content;
     border: 5px solid rgb(3, 150, 176);
-    height: 70px;
+    height: 75px;
+    flex: 1;
 }
 .greyhead {
     display: flex;
     background-color: rgb(57, 57, 57);
     height: fit-content;
     border: 5px solid rgb(57, 57, 57);
-    height: 40px;
+    height: 30px;
 }
 .words {
     border: 3px solid darkgrey;
     border-top: none;
-    padding: 20px 10px;
+    padding: 20px 20px;
     display: flex;
     flex-direction: column;
+    flex: 2;
 }
 #userpic {
     border: 5px solid white;
     border-radius: 50%;
-    height: 70px;
+    height: 75px;
     filter: invert(1);
 }
 
 #jane {
     border: 2px solid white;
     border-radius: 50%;
-    height: 80px;
+    height: 85px;
     position: relative;
     top: 31px;
     left: 20px;
     box-shadow: 0px 0px 0px 2px rgb(204, 204, 204);
 }
 #name {
-    margin-top: 20px;
-    font-weight: 900;
+    margin: 30px 0 10px;
+    font-size: xx-large;
+    font-weight: 500;
 }
 .icon {
     height: 1em;
     padding: 1px;
     margin-right: 10px;
+    padding-left:3px;
 
 }
 .icon-line {
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    font-weight: 700;
-
+    font-weight: 600;
+    font-size: 110%;
 }
 .icon-line,
 #roles {
-    margin: 5px 0;
+    margin: 7px 0;
 }
 .bodylink {
-    color: rgba(63, 89, 236, 0.867);
+    color: rgb(8, 114, 221);
 }
 #eduhead {
     color: white;
     display: flex;
     align-items: center;
-    padding-left: 20px;
-    font-weight: 900;
+    padding: 0 20px;
+    font-weight: 500;
 }
 #cd {
     font-size: 1.22em;
+    font-weight: 600;
+    opacity: .8;
 }
 #dates {
     padding: 10px 0;
-    color: rgb(57, 57, 57);
-    font-weight: 900;
+    color: rgba(57, 57, 57, .5);
+    font-weight: 600;
 }
-#conections {
-    column-gap:20px;
+#belts {
+    font-weight: 600;
+}
+.greyhead2 {
+    display: flex;
+    background-color: rgb(57, 57, 57);
+    height: fit-content;
+    border: 5px solid rgb(57, 57, 57);
+    height: 40px;
 }
 .connhead {
     color: white;
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 0 10px;
+    padding: 10px;
     font-weight: 900;
     flex-wrap: nowrap;
 }
@@ -177,18 +189,32 @@ li {
 }
 #conns {
     display: flex;
+    justify-content: center;;
     align-items: center;
     background-color: rgb(204, 204, 204);
     color: black;
     padding: 5px;
     height: 1em;
+    width: 2.5em;
     border-radius: 100%;
     margin-right: 1em;
+}
+.folk {
+    border: 3px solid darkgrey;
+    border-top: none;
+    padding: 20px 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
 }
 .person {
     display: flex;
     justify-content: space-between;
     height: 3em;
+    flex:1;
+}
+#bottom {
+    margin-bottom: -10px;
 }
 .add {
     height: 1.5em;
@@ -196,30 +222,27 @@ li {
     display: flex;
     justify-content: flex-start;
     align-items: center;
+    font-size: 110%;
 }
 .pics {
     border: 3px solid white;
     border-radius: 50%;
-    height: 2em;
-    width: 2em;
+    height: 1.8em;
+    width: 1.8em;
     filter: invert(1);
     margin-right: 10px;;
-    /* border: 2px solid white;
-    border-radius: 50%;
-    height: 80px; */
 }
 .accden {
-    height: 2em;
-    width: 2em;
-    justify-content: flex-end;;
-}
-.words {
-    border: 3px solid darkgrey;
-    border-top: none;
-    display: flex;
-    flex-direction: column;
+    height: 1.8em;
+    width: 1.8em;
+    justify-content: flex-end;
 }
 #view {
     border: 3px solid darkgrey;
     padding: 10px;
+    border-top: 0;
+    font-size: 98%;
+}
+a {
+    color: rgb(8, 114, 221)
 }
