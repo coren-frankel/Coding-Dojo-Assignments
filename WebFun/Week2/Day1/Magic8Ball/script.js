@@ -8,7 +8,7 @@ var lifesAnswers = [
     "Most likely.",
     "Outlook good.",
     "Yes.",
-    "So High",
+    "I won't be answering any questions without my lawyer.",
     "Signs point to yes.",
     "Reply hazy, try again.",
     "Ask again later.",
@@ -19,25 +19,21 @@ var lifesAnswers = [
     "My reply is no.",
     "My sources say no.",
     "Outlook not so good.",
-    "Very doubtful."
+    "Very doubtful.",
+    "What kind of question is that?."
 ];
 
 var answer = document.getElementById('answer');
 var clear = document.getElementById('question');
-// var ball = document.querySelector('#ball');
-
-
 
 function getAnswer() {
     var ball = document.querySelector("#ball");
-    ball.setAttribute("src", "ball.gif")
+    ball.setAttribute("src", "ball.gif");
     setTimeout(replace, 1000);
-    
 }
 
 function replace() {
     clear.value = ''
     ball.setAttribute("src", "ballStill.jpg")
     answer.innerText =  lifesAnswers[Math.floor(Math.random()*lifesAnswers.length)];
-
 }
