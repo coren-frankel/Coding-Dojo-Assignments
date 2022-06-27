@@ -6,6 +6,7 @@
 #head {
     background-color: darkgray;
     display: flex;
+    align-items: center;
     justify-content: space-between;
     padding: 10px 20px;
     margin: 0 10%;
@@ -15,9 +16,12 @@ h1 {
 }
 #search {
     width: 50%;
+    height: 1.5em;
+    border: 2px solid black;
 }
 #login {
     width: 10%;
+    height: 2em;
     background-color: rgb(23, 75, 229);
     color: aliceblue;
     box-shadow: 3px 3px black;
