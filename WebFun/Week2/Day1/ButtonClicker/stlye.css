@@ -1,0 +1,25 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+}
+#head {
+    background-color: darkgray;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 20px;
+    margin: 0 10%;
+}
+h1 {
+    font-weight: 400;
+}
+#search {
+    width: 50%;
+}
+#login {
+    width: 10%;
+    background-color: rgb(23, 75, 229);
+    color: aliceblue;
+    box-shadow: 3px 3px black;
+    border: 2px solid black;
+}
