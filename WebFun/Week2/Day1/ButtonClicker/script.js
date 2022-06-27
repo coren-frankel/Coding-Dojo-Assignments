@@ -1,3 +1,4 @@
 function login(button) {
-    button.innerText = "Logout"
+    button.innerText = "Logout";
 }
+

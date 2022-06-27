@@ -1,21 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="stlye.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap"
+        rel="stylesheet">
+    <script src="script.js" defer></script>
     <title>Dojonary</title>
 </head>
+
 <body>
     <div id="head">
         <h1>Dojonary</h1>
         <input type="text" id="search" value=" Search Me Baby, One More Time...">
         <button id="login" onclick="login(this)">Login</button>
     </div>
+    <div id="body">
+        <div id="col1">
+            <div class="defs">
+                <div class="leftdef">
+                    <h1>ninja</h1>
+                    <h4>noun</h4>
+                    <h5>Plural: ninjas</h5>
+                    <button onclick="alert('Ninja was liked')" class="likes" id="likes1st">13 likes</button>
+                </div>
+                <div class="definition">
+                    A practioner skilled in the
+                    <a href="#">Japanese</a>
+                    art of
+                    <a href="#">ninjutsu</a>
+                </div>
+            </div>
+            <div class="defs">
+                <div class="leftdef">
+                    <h1>ninja</h1>
+                    <h4>noun</h4>
+                    <h5>Plural: ninjas</h5>
+                    <button onclick="alert('Ninja was liked')" class="likes" id="likes2nd">37 likes</button>
+                </div>
+                <div class="definition">
+                    A
+                    <a href="#">programmer</a>
+                    who breaks down problems with
+                    <a href="#">zen</a>-like
+                    focus
+                </div>
+            </div>
+        </div>
+        <div id="col2">
+            <div id="addDef">
+                <h3>Dojonary is defined by <span>YOU</span></h3>
+                <button id="add" onclick="this.remove()">Add Definition</button>
+            </div>
+        </div>
+    </div>
 </body>
-<script src="script.js"></script>
+
+
 </html>
