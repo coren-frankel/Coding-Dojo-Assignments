@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap"
+        rel="stylesheet">
+    <script src="script.js"></script>
+    <title>unLinked</title>
+</head>
+
+<body>
+    <div id="navbar">
+        <div id="proflinks">
+            <h1 id="nav-title">Profile</h1>
+            <ul id="nav-links">
+                <li><a class="links" href="#">Home</a></li>
+                <li><a class="links" href="#" id="active">My Profile</a></li>
+                <li><a class="links" href="#">Find Connections</a></li>
+            </ul>
+        </div>
+        <button class="btn">Sign Out</button>
+    </div>
+    <div id="profilebody">
+        <div id="col1">
+            <div id="usercard">
+                <div id="head">
+                    <div id="jane">
+                        <img id="userpic" src="images/jane-m.jpg">
+                    </div>
+                </div>
+                <div class="words">
+                    <h2 id="name">Jane Doe</h2>
+                    <div class="icon-line"><img class="icon" src="images/map-marker.png">Seattle</div>
+                    <div id="roles">
+                        Developer | Engineer | Problem Solver <br>
+                        Master of shadows and the Internet!
+                    </div>
+                    <div class="icon-line">
+                        <img class="icon" src="images/gear.png">
+                        <button id="bodylink" onclick="changeName()" href="#">edit profile</button>
+                    </div>
+                </div>
+            </div>
+            <div id="education">
+                <div class="greyhead" id="eduhead">Education
+                </div>
+                <div class="words">
+                    <h3 id="cd">Coding Dojo - Full Stack Bootcamp</h3>
+                    <div id="dates">
+                        Dec 2019 - Mar 2020
+                    </div>
+                    <div id="belts">
+                        Triple black belt in Python, MERN, and C#...
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="col2">
+            <div id="connections">
+                <div id="requests">
+                    <div class="greyhead2">
+                        <div class="connhead">
+                            <div id="req">
+                                2
+                            </div>
+                            Connection Requests
+                        </div>
+                    </div>
+                    <div class="folk" id="noMore">
+                        <div class="person" id="todd">
+                            <div class="add">
+                                <img class="pics" src="images/todd-s.jpg">
+                                Todd E
+                            </div>
+                            <div class="check">
+                                <input type="image" id="addtodd" onclick="connect(this)" class="accden" src="images/accept-circle.png">
+                                <input type="image" id="dectodd" onclick="decline(this) "class="accden" src="images/close-circle.png">
+                            </div>
+                        </div>
+                        <div id="phil" class="person">
+                            <div class="add">
+                                <img class="pics" src="images/phil-s.jpg">
+                                Phil K
+                            </div>
+                            <div class="check">
+                                <input type="image" id="addphil" onclick="connect(this)" class="accden" src="images/accept-circle.png">
+                                <input type="image" id="decphil" onclick="decline(this)" class="accden" src="images/close-circle.png">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="your">
+                <div class="greyhead2">
+                    <div class="connhead">
+                        <div id="conns">
+                            664
+                        </div>
+                        Your Connections
+                    </div>
+                </div>
+                <div class="folk">
+                    <div class="person">
+                        <div class="add">
+                            <img class="pics" src="images/adrien-s.jpg">
+                            Adrien D
+                        </div>
+                    </div>
+                    <div class="person">
+                        <div class="add">
+                            <img class="pics" src="images/anne-s.jpg">
+                            Anne J
+                        </div>
+                    </div>
+                    <div class="person">
+                        <div class="add">
+                            <img class="pics" src="images/alayne-s.jpg">
+                            Alayne T
+                        </div>
+                    </div>
+                    <div class="person">
+                        <div class="add">
+                            <img class="pics" src="images/arry-s.jpg">
+                            Arry Y
+                        </div>
+                    </div>
+                </div>
+                <div id="view">
+                    <a href="#">View More</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+</body>
+
+</html>

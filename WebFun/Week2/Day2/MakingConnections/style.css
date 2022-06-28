@@ -1,0 +1,253 @@
+* {
+    font-family: 'Quicksand', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+#navbar {
+    display: flex;
+    height: 2.5em;
+    padding: 10px 150px;
+    justify-content: space-between;
+    align-items: center;
+    background-color: black;
+    /* background-color: rgb(57, 57, 57); */
+}
+#proflinks {
+    display: flex;
+    justify-content: flex-start;
+}
+
+#nav-title {
+    margin-right: 20px;;
+    color: white;
+    font-weight: 400;
+}
+#nav-links {
+    display: flex;
+    
+}
+li {
+    list-style: none;
+    font-weight: 900px;
+    padding: 10px;
+}
+.links {
+    color: rgb(206, 206, 206);
+    flex-wrap: nowrap;
+    text-decoration: none;
+}
+#active {
+    color: white;
+}
+.btn {
+    color: white;
+    border: 3px solid black;
+    height: 2em;
+    font-size: 110%;
+    padding: 0 10px;
+    margin-right: 5px;
+    background-color: rgb(3, 150, 176);
+    box-shadow: 2px 2px black;
+}
+#profilebody {
+    display: flex;
+    padding: 20px 150px;
+    gap: 20px;
+    
+}
+#col1 {
+    display: flex;
+    flex-direction: column;
+    flex: 3;
+    gap: 20px;
+}
+#col2 {
+    display: flex;
+    flex-direction: column;
+    flex: 2;
+    gap: 20px;;
+}
+
+#usercard,
+#education,
+#connections,
+#your {
+    margin-bottom: 10px;
+}
+
+#head {
+    display: flex;
+    background-color: rgb(3, 150, 176);
+    border: 5px solid rgb(3, 150, 176);
+    height: 75px;
+    flex: 1;
+}
+.greyhead {
+    display: flex;
+    background-color: rgb(57, 57, 57);
+    height: fit-content;
+    border: 5px solid rgb(57, 57, 57);
+    height: 30px;
+}
+.words {
+    border: 3px solid darkgrey;
+    border-top: none;
+    padding: 20px 20px;
+    display: flex;
+    flex-direction: column;
+    flex: 2;
+}
+#userpic {
+    border: 5px solid white;
+    border-radius: 50%;
+    height: 75px;
+    filter: invert(1);
+}
+
+#jane {
+    border: 2px solid white;
+    border-radius: 50%;
+    height: 85px;
+    position: relative;
+    top: 31px;
+    left: 20px;
+    box-shadow: 0px 0px 0px 2px rgb(204, 204, 204);
+}
+#name {
+    margin: 30px 0 10px;
+    font-size: xx-large;
+    font-weight: 500;
+}
+.icon {
+    height: 1em;
+    padding: 1px;
+    margin-right: 10px;
+    padding-left:3px;
+
+}
+.icon-line {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    font-weight: 600;
+    font-size: 110%;
+}
+.icon-line,
+#roles {
+    margin: 7px 0;
+}
+#bodylink {
+    background: none;
+    border: none;
+    text-decoration: underline;
+    font-size: 100%;
+    color: rgb(8, 114, 221);
+}
+#eduhead {
+    color: white;
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+    font-weight: 500;
+}
+#cd {
+    font-size: 1.22em;
+    font-weight: 600;
+    opacity: .8;
+}
+#dates {
+    padding: 10px 0;
+    color: rgba(57, 57, 57, .5);
+    font-weight: 600;
+}
+#belts {
+    font-weight: 600;
+}
+.greyhead2 {
+    display: flex;
+    background-color: rgb(57, 57, 57);
+    height: fit-content;
+    border: 5px solid rgb(57, 57, 57);
+    height: 40px;
+}
+.connhead {
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    font-weight: 900;
+    flex-wrap: nowrap;
+}
+#req {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(204, 204, 204);
+    color: black;
+    padding: 5px;
+    height: 1em;
+    width: 1em;
+    border-radius: 50%;
+    margin-right: 1em;
+}
+#conns {
+    display: flex;
+    justify-content: center;;
+    align-items: center;
+    background-color: rgb(204, 204, 204);
+    color: black;
+    padding: 5px;
+    height: 1em;
+    width: 2.5em;
+    border-radius: 100%;
+    margin-right: 1em;
+}
+.folk {
+    border: 3px solid darkgrey;
+    border-top: none;
+    padding: 20px 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.person {
+    display: flex;
+    justify-content: space-between;
+    height: 3em;
+    flex:1;
+}
+#phil {
+    margin-bottom: -10px;
+}
+.add {
+    height: 1.5em;
+    font-weight: 900;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    font-size: 110%;
+}
+.pics {
+    /* border: 3px solid black; */
+    border-radius: 50%;
+    height: 1.8em;
+    width: 1.8em;
+    border: 3px solid white;
+    filter: invert(1);
+    margin-right: 10px;;
+}
+.accden {
+    height: 1.8em;
+    width: 1.8em;
+    justify-content: flex-end;
+}
+#view {
+    border: 3px solid darkgrey;
+    padding: 10px;
+    border-top: 0;
+    font-size: 98%;
+}
+a {
+    color: rgb(8, 114, 221)
+}
