@@ -1,0 +1,31 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+#header {
+    background-color: black;
+    font-size: 100%;
+    color: white;
+    margin: 0 15%;
+    padding: 1% 2%;
+}
+h1 {
+    font-weight: 400;
+}
+#feed {
+    text-align: center;
+    margin: 1%;
+}
+#maintcont {
+    display: flex;
+    
+}
+#avatar {
+    border: 2px solid black;
+    display: flex;
+    flex: 1;
+}
+img {
+    width: 8%;
+}
