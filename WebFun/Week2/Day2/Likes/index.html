@@ -12,22 +12,22 @@
 
 <body>
     <div id="header">
-        <h1>Network</h1>
+        <h2>Network</h2>
     </div>
-    <h1 id="feed">Your Feed</h1>
+    <h2 id="feed">Your Feed</h2>
     <div id="maincont">
         <div id="avatar">
-            <img src="user-circle.png">
-            <a href="#">Add an avatar</a>
-            <h2>James Doe</h2>
+            <img class="avakids" src="user-circle.png">
+            <a class="avakids" href="#">Add an avatar</a>
+            <h3 class="avakids" >James Doe</h3>
         </div>
         <div class="posts">
             <div class="postbox">
                 <div class="likebox">
-                    <h2 class="name">Neil M</h2>
+                    <h3 class="name">Neil M</h3>
                     <div class="likes">
                         <div class="numLikes" id="neilCount">9 like(s)</div>
-                        <button onclick="neilLike()" class="like" id="neilmlike">Like</button>
+                        <button onclick="neilLike(this)" class="like" id="neilmlike">Like</button>
                     </div>
                 </div>
                 <p class="post">I just set up this new discord bot, let me know what you all think.
@@ -36,26 +36,30 @@
             </div>
             <div class="postbox">
                 <div class="likebox">
-                    <h2 class="name">Nichole K</h2>
+                    <h3 class="name">Nichole K</h3>
                     <div class="likes">
-                        <div class="numLikes" id="nicholeCount">12 like(s)</div>
-                        <button onclick="neilLike()" class="like" id="nicholeklike">Like</button>
+                        <div class="numLikes" id="nichCount">12 like(s)</div>
+                        <button onclick="nichLike()" class="like" id="nicholeklike">Like</button>
                     </div>
                 </div>
-                <p class="post">I just set up this new discord bot, let me kniw what you all think.
-                    <a href="#">link</a>
+                <p class="post" id="nich">
+                    Just finished my 
+                    <a href="#">next comic</a>,
+                    check it out.
                 </p>
             </div>
             <div class="postbox">
                 <div class="likebox">
-                    <h2 class="name">Neil M</h2>
+                    <h3 class="name">Jim R</h3>
                     <div class="likes">
-                        <div class="numLikes" id="neilCount">9 like(s)</div>
-                        <button onclick="neilLike()" class="like" id="neilmlike">Like</button>
+                        <div class="numLikes" id="jimCount">9 like(s)</div>
+                        <button onclick="jimLike()" class="like" id="neilmlike">Like</button>
                     </div>
                 </div>
-                <p class="post">I just set up this new discord bot, let me kniw what you all think.
-                    <a href="#">link</a>
+                <p class="post">
+                    I can't stop listening to the
+                    <a href="#">new album</a>.
+                    <br>Who else is liking it?
                 </p>
             </div>
         </div>
