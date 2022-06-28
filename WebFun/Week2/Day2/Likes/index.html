@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,33 +9,59 @@
     <script src="script.js" defer></script>
     <title>Likes</title>
 </head>
+
 <body>
     <div id="header">
         <h1>Network</h1>
     </div>
     <h1 id="feed">Your Feed</h1>
     <div id="maincont">
-        <div id="avater">
+        <div id="avatar">
             <img src="user-circle.png">
             <a href="#">Add an avatar</a>
             <h2>James Doe</h2>
         </div>
         <div class="posts">
-            <div class="likebox">
-                
-            
+            <div class="postbox">
+                <div class="likebox">
+                    <h2 class="name">Neil M</h2>
+                    <div class="likes">
+                        <div class="numLikes" id="neilCount">9 like(s)</div>
+                        <button onclick="neilLike()" class="like" id="neilmlike">Like</button>
+                    </div>
+                </div>
+                <p class="post">I just set up this new discord bot, let me know what you all think.
+                    <a href="#">link</a>
+                </p>
             </div>
-            <div class="likebox">
-                
-            
+            <div class="postbox">
+                <div class="likebox">
+                    <h2 class="name">Nichole K</h2>
+                    <div class="likes">
+                        <div class="numLikes" id="nicholeCount">12 like(s)</div>
+                        <button onclick="neilLike()" class="like" id="nicholeklike">Like</button>
+                    </div>
+                </div>
+                <p class="post">I just set up this new discord bot, let me kniw what you all think.
+                    <a href="#">link</a>
+                </p>
             </div>
-            <div class="likebox">
-                
-            
+            <div class="postbox">
+                <div class="likebox">
+                    <h2 class="name">Neil M</h2>
+                    <div class="likes">
+                        <div class="numLikes" id="neilCount">9 like(s)</div>
+                        <button onclick="neilLike()" class="like" id="neilmlike">Like</button>
+                    </div>
+                </div>
+                <p class="post">I just set up this new discord bot, let me kniw what you all think.
+                    <a href="#">link</a>
+                </p>
             </div>
         </div>
-    
-    
+    </div>
+
+
     </div>
 </body>
 <script>
