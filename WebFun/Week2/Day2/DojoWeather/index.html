@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap"
+        rel="stylesheet">
+    <script src="script.js" defer></script>
+    <title>Weather Forecast</title>
+</head>
+
+<body>
+    <div id="head">
+        <h1>DojoWeather</h1>
+        <div id="location">
+            <h3 onclick='alert("Loading weather report...")'>Burbank</h3>
+            <h3 onclick='alert("Loading weather report...")'>Chicago</h3>
+            <h3 onclick='alert("Loading weather report...")'>Dallas</h3>
+        </div>
+    </div>
+    <div id="main">
+        <div id="current">
+            <h2>San Jose</h2>
+            <div id="temp">
+                <label for="temperature">show temperature in</label>
+                <select name="temperature" onChange="convert(this)">
+                    <option value="celsius">C°</option>
+                    <option value="farenheit">F°</option>
+                </select>
+            </div>
+        </div>
+        <div id="daily">
+            <div class="day" id="today">
+                <h3>Today</h3>
+                <img class="icons" src="assets/some_rain.png">
+                <p>some rain</p>
+                <div class="hilo">
+                    <h3 class="high" id="temp1">24°</h3>
+                    <h3 class="low" id="temp2">18°</h3>
+                </div>
+            </div>
+            <div class="day" id="tomorrow">
+                <h3>Tomorrow</h3>
+                <img class="icons" src="assets/some_sun.png">
+                <p>some sun</p>
+                <div class="hilo">
+                    <h3 class="high" id="temp3">27°</h3>
+                    <h3 class="low" id="temp4">19°</h3>
+                </div>
+            </div>
+            <div class="day" id="friday">
+                <h3>Today</h3>
+                <img class="icons" src="assets/some_clouds.png">
+                <p>some clouds</p>
+                <div class="hilo">
+                    <h3 class="high" id="temp5">21°</h3>
+                    <h3 class="low" id="temp6">16°</h3>
+                </div>
+            </div>
+            <div class="day" id="saturday">
+                <h3>Today</h3>
+                <img class="icons" src="assets/some_sun.png">
+                <p>some sun</p>
+                <div class="hilo">
+                    <h3 class="high" id="temp7">26°</h3>
+                    <h3 class="low" id="temp8">21°</h3>
+                </div>
+            </div>
+        </div>
+        <div id="cookies">
+            <img id="cook" src="assets/cookie.png">
+            <div id="message">
+                <h4 id="stop">Stop! Cookie time</h4>
+                <p>We use cookies (sadly not the edible ones) to personalize content and ads, to provide social media features and to analyse our traffic. <a href="#">Read more...</a></p>
+            </div>
+            <button id="accept" onclick="accept(this)">I Accept</button>
+        </div>
+</body>
+<script></script>
+</html>

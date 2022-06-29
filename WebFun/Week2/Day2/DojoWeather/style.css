@@ -1,0 +1,115 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif, Cambria;
+}
+
+#head {
+    background-color: rgb(122, 169, 232);
+    color: whitesmoke;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+}
+#head > h1 {
+    flex: 1;
+}
+#head > h1,
+#location {
+    padding: 1% 10%;
+}
+
+#location {
+    display: flex;
+    justify-content: space-between;
+    flex: 2;
+}
+#location > h3 {
+    font-weight: 300;
+    padding-right: 0 8%;
+}
+h2 {
+    font-weight: 400;
+}
+#current {
+    display: flex;
+    justify-content: space-between;
+    padding: 2% 0;
+    align-items: center;
+    border-bottom: 2px solid black;
+    margin: 2% 8%;
+}
+#daily {
+    padding: 2% 8%;
+    padding-top: 0;
+    display: flex;
+    gap: 3%;
+}
+
+.day {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(233, 233, 233);
+    align-items: center;
+}
+h3 {
+    font-weight: 400;
+    font-size: 120%;
+}
+.day {
+    padding: 2% 0%;
+}
+.icons {
+    width: 65%;
+    background-color: whitesmoke;
+    border-radius: 50%;
+    margin: 8% 0;
+    
+}
+.day > p {
+    margin-bottom: 12%;
+}
+.hilo {
+    width: 65%;
+    display: flex;
+    justify-content: space-between;
+}
+.high {
+    color: crimson;
+    font-weight: 600;
+}
+.low {
+    color: royalblue;
+    font-weight: 600;
+}
+
+#cookies {
+    position: fixed;
+    bottom: 5%;
+    margin: -1% 8%;
+    display: flex;
+    background-color: rgb(233, 233, 233);
+    border: 3px solid black;
+    align-items: center;
+    padding-bottom: .5%;
+}
+#cook {
+    width: 6%;
+    height: auto;
+    padding: 3%;
+}
+#message {
+    padding: 1% 2%;
+}
+#accept {
+    background-color: rgb(122, 169, 232);
+    font-weight: 500;
+    height: 0%;
+    width: 22%;
+    padding: .25em 2%;
+    margin: 3%;
+    border:  2px solid black;
+    box-shadow: 3px 3px;
+}
