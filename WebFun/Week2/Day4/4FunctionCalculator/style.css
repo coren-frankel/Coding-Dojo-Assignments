@@ -11,16 +11,20 @@
     margin: 5% 35%;
     padding: 2%;
     justify-content: center;
-    width: 25%
+    width: 25%;
+    border-radius: 10%;
 }
 
 #display{
     display: flex;
     justify-content: flex-end;
     padding: 3%;
-    font-size: 180%;
-    /* margin: 0 5%; */
-    width: 90%
+    font-size: 150%;
+    flex-wrap: nowrap;
+    margin: 0 5%;
+    width: 89%;
+    overflow-x: auto;
+    float: left;
 }
 .row{
     display: flex;
@@ -47,6 +51,10 @@ button {
 }
 #equals {
     color: #222222;
+    /* background-color: transparent; */
     background-color: #C7C7C9;
+    border-radius: 1em;
+    height: 2em;
+    margin: 0 5%;
     width: 100%;
 }
