@@ -6,13 +6,11 @@
 #calculator{
     background-color: #222222;
     color: white;;
-    /* display: flex; */
-    flex-direction: column;
     margin: 5% 35%;
     padding: 2%;
-    justify-content: center;
+
     width: 25%;
-    border-radius: 10%;
+    border-radius: 4%;
 }
 
 #display{

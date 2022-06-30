@@ -14,8 +14,10 @@ function press(num){
         displayDiv.innerText = num;
     } else if (displayDiv.innerText > 0){
         displayDiv.innerText += num;
-    } else if (displayDiv.innerText = '.'){
-        displayDiv.innerText += (0. + num)
+    } else if (displayDiv.innerText == '.'){
+        displayDiv.innerText += (0.+num);
+    }else if ((displayDiv.innerText === .0)){
+        displayDiv.innerText += num;
     }
 }
 var operator = '';
@@ -26,19 +28,13 @@ function setOP(math){
     if (x == undefined){
         x = displayDiv.innerText.slice(0);
         displayDiv.innerText = math
-        console.log(x)
         operator = math;
-        console.log(operator)
     }
 }
-console.log(operator)
 function calculate(){
     y = displayDiv.innerText.slice(0);
-    console.log(y);
-    console.log(x)
-    console.log(operator)
     if (operator === '/') {
-        solution = Math.round(x / y);
+        solution = x / y;
     } else if (operator === '*') {
         solution = x * y;
     } else if (operator === '-') {
@@ -46,10 +42,10 @@ function calculate(){
     } else if (operator === '+') {
         solution = x + y;
     }
+    console.log(`${x} ${operator} ${y} = ${solution}`);
     operator = '';
     x = undefined;
     y = undefined;
-    Math.round(solution * 10) / 10;
     if (solution == Infinity){
         displayDiv.innerText = '∞'
     } else 
