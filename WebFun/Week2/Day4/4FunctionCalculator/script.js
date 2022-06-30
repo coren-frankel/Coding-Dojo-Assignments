@@ -26,13 +26,13 @@ var y;
 var solution;
 function setOP(math){
     if (x == undefined){
-        x = displayDiv.innerText.slice(0);
+        x = parseInt(displayDiv.innerText.slice(0));
         displayDiv.innerText = math
         operator = math;
     }
 }
 function calculate(){
-    y = displayDiv.innerText.slice(0);
+    y = parseInt(displayDiv.innerText.slice(0));
     if (operator === '/') {
         solution = x / y;
     } else if (operator === '*') {
@@ -42,12 +42,17 @@ function calculate(){
     } else if (operator === '+') {
         solution = x + y;
     }
+    
     console.log(`${x} ${operator} ${y} = ${solution}`);
     operator = '';
     x = undefined;
     y = undefined;
     if (solution == Infinity){
         displayDiv.innerText = '∞'
+    } else if (solution.toString().includes('.')){
+        solution = Math.round(solution*1000000000000)/1000000000000;
+        displayDiv.innerText = solution;
     } else 
         displayDiv.innerText = solution;
 }
+
