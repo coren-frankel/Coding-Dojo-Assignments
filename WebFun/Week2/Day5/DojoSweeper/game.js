@@ -169,6 +169,14 @@ function howMany(i, j, element) {
         //     }
         // }, 0.5*1000);
         endgame.style.display= 'block';
+        var deliver = Math.floor(Math.random()*3);
+        if (deliver == 0) {
+            endgame.innerHTML = (`<div>You sneak up on a Ninja resting and eating a sandwich. A twig snaps beneath your toes and you\'re instantly spotted.<h3>Game Over!</h3><div>`)
+        } else if (deliver == 1) {
+            endgame.innerHTML = (`<div>Looks like you\'re up wind, because they just smelled you. The trees around you rustle  as the ninja swarm.<h3>Game Over!</h3><div>`)
+        } else if (deliver == 2) {
+            endgame.innerHTML = (`<div>I think that smiley bush back there just coughed. The Ninja Assasins approach before you can blame the bush.<h3>Game Over!</h3><div>`)
+        }
         endgame.innerHTML = (`<div><h3>Game Over!</h3>The Ninja Assasins have found you!<div>`)
         endgame.innerHTML += (`<button id="restart" onclick="location.reload()">restart</button>`);
     }

@@ -4,13 +4,15 @@
     margin: 0;
     padding: 0;
     font-family: 'Press Start 2P', monospace;
-    background-color: slategrey;
-    color: yellow;
-}
     
+}
+body {
+    background-color: slategrey;
+}   
 h2 {
     text-align: center;
     margin: 20px 0;
+    color: yellow;
 }
     
 #the-dojo {
@@ -26,7 +28,7 @@ h2 {
     width: 320px;
     height: 320px;
     position: fixed;
-    top: 12%;
+    top: 13%;
     left: 30%;
     opacity: 90%;
     color: whitesmoke;
