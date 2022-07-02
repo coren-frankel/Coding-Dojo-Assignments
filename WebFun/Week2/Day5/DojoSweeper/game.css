@@ -17,6 +17,10 @@ h2 {
     display: flex;
     flex-wrap: wrap;
 }
+
+#gameover {
+    margin: 2%;
+}
     
 .tatami {
     background-color: wheat;
@@ -31,10 +35,9 @@ h2 {
     border: 2px solid #999;
     border-right: 2px solid #ccc;
     border-bottom: 2px solid #ccc;
+    background-color: white;
 }
-.ninja {
-    border: 2px solid #999;
-    border-right: 2px solid #ccc;
-    border-bottom: 2px solid #ccc;
-    background-image: url(ninja.gif);
+
+#restart {
+    text-align: center;
 }

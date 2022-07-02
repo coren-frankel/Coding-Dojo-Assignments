@@ -8,7 +8,10 @@ var theDojo =  [[0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
                 [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
                 [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
                 [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]];
-
+    var dojoDiv = document.querySelector("#the-dojo");
+    var endgame = document.querySelector("#gameover");
+    var x;
+    var y;
 // Creates the rows of buttons for this game
 function render(theDojo) {
     var result = "";
@@ -17,22 +20,18 @@ function render(theDojo) {
             result += `<button class="tatami" onclick="howMany(${i}, ${j}, this)"></button>`;
         }
     }
-    for (var ninja = 0; ninja < 10; ninja++) {
-        let y = Math.floor(Math.random() * 9);
-        let x = Math.floor(Math.random() * 9);
-        if (theDojo[x][y] == 0) {
-            theDojo[x][y] = 1;
-        } else if (theDojo[x][y] == 1) {
+    for (var ninja = 1; ninja <= 10; ninja++) {
+        x = Math.floor(Math.random() * 9);
+        y = Math.floor(Math.random() * 9);
+        if (theDojo[x][y] == 9) {
             ninja--;
+        }
+        if (theDojo[x][y] == 0) {
+            theDojo[x][y] = 9;
         }
     }
     return result;
 }
-var dojoDiv = document.querySelector("#the-dojo");
-var body = document.querySelector('body');
-// var x;
-// var y;
-var adjacent;
 // var y = Math.ceil(Math.random()*10);
 //     var x = Math.ceil(Math.random()*10);
 //     console.log(theDojo[x][y])
@@ -40,38 +39,49 @@ var adjacent;
 //        under the adjacent (all sides and corners) squares.
 //        Use i and j as the indexes to check theDojo.
 function howMany(i, j, element) {
-    if (element.innerText == 1) {
-        element.classList.remove("active");
-        element.classList.add("ninja");
-        body.innerHTML = `<button onclick="location.reload()">restart</button>`;
-    } else if (element.innerText === 0) {
-        if (theDojo[i + 1][j + 1] === 1) {
+    var adjacent = 0;
+    console.log(theDojo[i][j])
+    if (theDojo[i][j] == 0) {
+        if ((theDojo[i][j + 1] == 9) == true) {
             adjacent++;
         }
-        if (theDojo[i + 1][j] === 1) {
+        if ((theDojo[i][j - 1] == 9) == true) {
             adjacent++;
         }
-        if (theDojo[i + 1][j - 1] === 1) {
+        if ((theDojo[i + 1][j + 1] == 9) == true) {
             adjacent++;
         }
-        if (theDojo[i - 1][j + 1] === 1) {
+        if ((theDojo[i + 1][j] == 9) == true) {
             adjacent++;
         }
-        if (theDojo[i - 1][j] === 1) {
+        if ((theDojo[i + 1][j - 1] == 9) == true) {
             adjacent++;
         }
-        if (theDojo[i - 1][j - 1] === 1) {
+        if ((theDojo[i - 1][j + 1] == 9) == true) {
             adjacent++;
         }
-        if (theDojo[i][j + 1] === 1) {
+        if ((theDojo[i - 1][j] == 9) == true) {
             adjacent++;
         }
-        if (theDojo[i][j - 1] === 1) {
+        if ((theDojo[i - 1][j - 1] == 9) == true) {
             adjacent++;
         }
-    }
-    element.classList.toggle("active");
-    element.innerText = adjacent;
+        element.classList.toggle("active");
+        element.innerText = adjacent;
+    } else if (theDojo[i][j] == 9) {
+        for (var x = 0; x < theDojo.length; x++) {
+            for (var y = 0; y < theDojo[x].length; y++) {
+                if(theDojo[x][y] == 9){
+                    element.style.backgroundImage = "url('ninja.gif')";
+                    element.style.backgroundSize = "contain";
+                }
+            }
+        }
+        endgame.innerHTML = (`<div>The Ninja Assasins have found you! Game Over!<div>`)
+        endgame.innerHTML += (`<button id="restart" onclick="location.reload()">restart</button>`);
+        // theDojo.remove()
+    }  
+    
     
     // element.innerText = theDojo[i][j];
 }
@@ -88,7 +98,8 @@ function howMany(i, j, element) {
 var style = "color:cyan;font-size:1.5rem;font-weight:bold;";
 console.log("%c" + "IF YOU ARE A DOJO STUDENT...", style);
 console.log("%c" + "GOOD LUCK THIS IS A CHALLENGE!", style);
-// shows the dojo for debugging purposes
-console.table(theDojo);
+
 // adds the rows of buttons into <div id="the-dojo"></div> 
 dojoDiv.innerHTML = render(theDojo);
+// shows the dojo for debugging purposes
+console.table(theDojo);
