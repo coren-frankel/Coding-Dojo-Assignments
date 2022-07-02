@@ -1,17 +1,18 @@
-var theDojo =  [[0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-                [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-                [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-                [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-                [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-                [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-                [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-                [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-                [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-                [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]];
-    var dojoDiv = document.querySelector("#the-dojo");
-    var endgame = document.querySelector("#gameover");
-    var x;
-    var y;
+var theDojo = [[0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0]];
+var dojoDiv = document.querySelector("#the-dojo");
+var endgame = document.querySelector("#gameover");
+var x;
+var y;
+var gameClock = 0;
 // Creates the rows of buttons for this game
 function render(theDojo) {
     var result = "";
@@ -23,11 +24,11 @@ function render(theDojo) {
     for (var ninja = 1; ninja <= 10; ninja++) {
         x = Math.floor(Math.random() * 9);
         y = Math.floor(Math.random() * 9);
-        if (theDojo[x][y] == 9) {
+        if (theDojo[x][y] == 'ninja') {
             ninja--;
         }
         if (theDojo[x][y] == 0) {
-            theDojo[x][y] = 9;
+            theDojo[x][y] = 'ninja';
         }
     }
     return result;
@@ -42,47 +43,126 @@ function howMany(i, j, element) {
     var adjacent = 0;
     console.log(theDojo[i][j])
     if (theDojo[i][j] == 0) {
-        if ((theDojo[i][j + 1] == 9) == true) {
-            adjacent++;
-        }
-        if ((theDojo[i][j - 1] == 9) == true) {
-            adjacent++;
-        }
-        if ((theDojo[i + 1][j + 1] == 9) == true) {
-            adjacent++;
-        }
-        if ((theDojo[i + 1][j] == 9) == true) {
-            adjacent++;
-        }
-        if ((theDojo[i + 1][j - 1] == 9) == true) {
-            adjacent++;
-        }
-        if ((theDojo[i - 1][j + 1] == 9) == true) {
-            adjacent++;
-        }
-        if ((theDojo[i - 1][j] == 9) == true) {
-            adjacent++;
-        }
-        if ((theDojo[i - 1][j - 1] == 9) == true) {
-            adjacent++;
+        if (i == 0) {
+            if (theDojo[i][j + 1] === 'ninja') {
+                adjacent++;
+            }
+            if (theDojo[i + 1][j + 1] === 'ninja') {
+                adjacent++;
+            }
+            if (theDojo[i + 1][j] === 'ninja') {
+                adjacent++;
+            }
+            if (theDojo[i][j - 1] === 'ninja') {
+                adjacent++;
+            }
+            if (theDojo[i + 1][j - 1] === 'ninja') {
+                adjacent++;
+            }
+        } else if (i == 9) {
+            if (theDojo[i][j + 1] === 'ninja') {
+                adjacent++;
+            }
+            if (theDojo[i][j - 1] === 'ninja') {
+                adjacent++;
+            }
+            if (theDojo[i - 1][j + 1] === 'ninja') {
+                adjacent++;
+            }
+            if (theDojo[i - 1][j] === 'ninja') {
+                adjacent++;
+            }
+            if (theDojo[i - 1][j - 1] === 'ninja') {
+                adjacent++;
+            }
+        } else if ((i == 0) && (j == 0)) {
+            if (theDojo[i + 1][j] === 'ninja') {
+                adjacent++;
+            }
+            if (theDojo[i][j + 1] === 'ninja') {
+                adjacent++;
+            }
+            if (theDojo[i + 1][j + 1] === 'ninja') {
+                adjacent++;
+            }
+        } else if ((i == 0) && (j == 9)) {
+            if (theDojo[i][j - 1] === 'ninja') {
+                adjacent++;
+            }
+            if (theDojo[i + 1][j - 1] === 'ninja') {
+                adjacent++;
+            }
+            if (theDojo[i + 1][j] === 'ninja') {
+                adjacent++;
+            }
+        } else if ((i == 9) && (j == 0)) {
+            if (theDojo[i - 1][j] === 'ninja') {
+                adjacent++;
+            }
+            if (theDojo[i - 1][j + 1] === 'ninja') {
+                adjacent++;
+            }
+            if (theDojo[i][j + 1] === 'ninja') {
+                adjacent++;
+            }
+        } else if ((i == 9) && (j == 9)) {
+            if (theDojo[i - 1][j] === 'ninja') {
+                adjacent++;
+            }
+            if (theDojo[i - 1][j - 1] === 'ninja') {
+                adjacent++;
+            }
+            if (theDojo[i][j - 1] === 'ninja') {
+                adjacent++;
+            }
+        } else {
+            if (theDojo[i + 1][j - 1] === 'ninja') {
+                adjacent++;
+            }
+            if (theDojo[i + 1][j + 1] === 'ninja') {
+                adjacent++;
+            }
+            if (theDojo[i + 1][j] === 'ninja') {
+                adjacent++;
+            }
+            if (theDojo[i][j + 1] === 'ninja') {
+                adjacent++;
+            }
+            if (theDojo[i][j - 1] === 'ninja') {
+                adjacent++;
+            }
+            if (theDojo[i - 1][j + 1] === 'ninja') {
+                adjacent++;
+            }
+            if (theDojo[i - 1][j] === 'ninja') {
+                adjacent++;
+            }
+            if (theDojo[i - 1][j - 1] === 'ninja') {
+                adjacent++;
+            }
         }
         element.classList.toggle("active");
         element.innerText = adjacent;
-    } else if (theDojo[i][j] == 9) {
+        theDojo[i][j] = adjacent
+        gameClock++;
+    } else if (theDojo[i][j] == 'ninja') {
+        element.style.backgroundImage = "url('ninja.gif')";
+        element.style.backgroundSize = "contain";
         for (var x = 0; x < theDojo.length; x++) {
             for (var y = 0; y < theDojo[x].length; y++) {
-                if(theDojo[x][y] == 9){
-                    element.style.backgroundImage = "url('ninja.gif')";
-                    element.style.backgroundSize = "contain";
+                if (theDojo[x][y] == 'ninja') {
+                    
+                    
+                    
+                } else {
+                    
                 }
             }
         }
         endgame.innerHTML = (`<div>The Ninja Assasins have found you! Game Over!<div>`)
         endgame.innerHTML += (`<button id="restart" onclick="location.reload()">restart</button>`);
         // theDojo.remove()
-    }  
-    
-    
+    }
     // element.innerText = theDojo[i][j];
 }
 
