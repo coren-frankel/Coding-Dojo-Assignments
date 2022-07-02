@@ -25,8 +25,8 @@ function render(theDojo) {
         }
     }
     for (var ninja = 1; ninja <= 10; ninja++) {
-        x = Math.floor(Math.random() * 9);
-        y = Math.floor(Math.random() * 9);
+        x = Math.floor(Math.random() * 10);
+        y = Math.floor(Math.random() * 10);
         if (theDojo[x][y] == 'ninja') {
             ninja--;
         }
@@ -146,7 +146,7 @@ function howMany(i, j, element) {
         gameClock++;
         console.log(theDojo[i][j])
         if (gameClock == 90) {//Game clock tracks non-ninja squares uncovered
-            endgame.style.display= 'block';
+            endgame.style.display= 'flex';
             endgame.innerHTML = (`<div><h3>Game Over!</h3>You evaded the ninjas, and live to see another day!<div>`)
             endgame.innerHTML += (`<button id="restart" onclick="location.reload()">restart</button>`);
         }
@@ -168,7 +168,7 @@ function howMany(i, j, element) {
         //         }
         //     }
         // }, 0.5*1000);
-        endgame.style.display= 'block';
+        endgame.style.display= 'flex';
         var deliver = Math.floor(Math.random()*3);
         if (deliver == 0) {
             endgame.innerHTML = (`<div>You sneak up on a Ninja resting and eating a sandwich. A twig snaps beneath your toes and you\'re instantly spotted.<h3>Game Over!</h3><div>`)
