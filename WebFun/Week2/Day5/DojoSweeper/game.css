@@ -40,4 +40,7 @@ h2 {
 
 #restart {
     text-align: center;
+    border-radius: 15%;
+    background-color: black;
+    color: crimson;
 }

@@ -18,7 +18,8 @@ function render(theDojo) {
     var result = "";
     for (var i = 0; i < theDojo.length; i++) {
         for (var j = 0; j < theDojo[i].length; j++) {
-            result += `<button class="tatami" onclick="howMany(${i}, ${j}, this)"></button>`;
+            result += `<button class="tatami" onclick="howMany(${i}, ${j}, this)" 
+            oncontextmenu="flag(this);return false;"></button>`;
         }
     }
     for (var ninja = 1; ninja <= 10; ninja++) {
@@ -151,11 +152,11 @@ function howMany(i, j, element) {
         for (var x = 0; x < theDojo.length; x++) {
             for (var y = 0; y < theDojo[x].length; y++) {
                 if (theDojo[x][y] == 'ninja') {
-                    
-                    
-                    
+
+
+
                 } else {
-                    
+
                 }
             }
         }
@@ -163,9 +164,16 @@ function howMany(i, j, element) {
         endgame.innerHTML += (`<button id="restart" onclick="location.reload()">restart</button>`);
         // theDojo.remove()
     }
-    // element.innerText = theDojo[i][j];
+    if (gameClock == 90) {
+        endgame.innerHTML = (`<div>You evaded the ninjas, and live to see another day! Game Over!<div>`)
+        endgame.innerHTML += (`<button id="restart" onclick="location.reload()">restart</button>`);
+    }
 }
-
+function flag(element) {
+    element.style.backgroundImage = "url('ninja.gif')";
+    element.style.backgroundSize = "contain";
+    return false;
+}
 
 // BONUS CHALLENGES
 // 1. draw the number onto the button instead of alerting it
