@@ -9,7 +9,9 @@ var theDojo = [[0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
 [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
 [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]];
 var dojoDiv = document.querySelector("#the-dojo");
-var endgame = document.querySelector("#gameover");
+var endgame = document.querySelector('#gameover');
+// var endgame = document.createElement('div');
+// endgame.classList.add('gameover');
 var x;
 var y;
 var gameClock = 0;
@@ -18,7 +20,7 @@ function render(theDojo) {
     var result = "";
     for (var i = 0; i < theDojo.length; i++) {
         for (var j = 0; j < theDojo[i].length; j++) {
-            result += `<button class="tatami" onclick="howMany(${i}, ${j}, this)" 
+            result += `<button class="tatami bush" onclick="howMany(${i}, ${j}, this)" 
             oncontextmenu="flag(this);return false;"></button>`;
         }
     }
@@ -34,15 +36,10 @@ function render(theDojo) {
     }
     return result;
 }
-// var y = Math.ceil(Math.random()*10);
-//     var x = Math.ceil(Math.random()*10);
-//     console.log(theDojo[x][y])
-// TODO - Make this function tell us how many ninjas are hiding 
-//        under the adjacent (all sides and corners) squares.
+//        this function tells us how many ninjas are hiding under the adjacent (all sides and corners) squares.
 //        Use i and j as the indexes to check theDojo.
 function howMany(i, j, element) {
     var adjacent = 0;
-    console.log(theDojo[i][j])
     if (theDojo[i][j] == 0) {
         if (i == 0) {
             if (theDojo[i][j + 1] === 'ninja') {
@@ -143,34 +140,41 @@ function howMany(i, j, element) {
             }
         }
         element.classList.toggle("active");
+        element.classList.remove("bush");
         element.innerText = adjacent;
         theDojo[i][j] = adjacent
         gameClock++;
+        console.log(theDojo[i][j])
+        if (gameClock == 90) {//Game clock tracks non-ninja squares uncovered
+            endgame.style.display= 'block';
+            endgame.innerHTML = (`<div><h3>Game Over!</h3>You evaded the ninjas, and live to see another day!<div>`)
+            endgame.innerHTML += (`<button id="restart" onclick="location.reload()">restart</button>`);
+        }
     } else if (theDojo[i][j] == 'ninja') {
+        // var doom = document.querySelectorAll('.tatami');
         element.style.backgroundImage = "url('ninja.gif')";
         element.style.backgroundSize = "contain";
-        for (var x = 0; x < theDojo.length; x++) {
-            for (var y = 0; y < theDojo[x].length; y++) {
-                if (theDojo[x][y] == 'ninja') {
-
-
-
-                } else {
-
-                }
-            }
-        }
-        endgame.innerHTML = (`<div>The Ninja Assasins have found you! Game Over!<div>`)
-        endgame.innerHTML += (`<button id="restart" onclick="location.reload()">restart</button>`);
-        // theDojo.remove()
-    }
-    if (gameClock == 90) {
-        endgame.innerHTML = (`<div>You evaded the ninjas, and live to see another day! Game Over!<div>`)
+        // setTimeout(function () {
+        //     for (var horde = 0; horde < 10; i++) {
+        //         for (var ninja = 1; ninja <= 10; ninja++) {
+        //         x = Math.floor(Math.random() * 9);
+        //         y = Math.floor(Math.random() * 9);
+        //         if (theDojo[x][y] == 'ninja') {
+        //             ninja--;
+        //         }
+        //         if (theDojo[x][y] >= 0) {
+        //             theDojo[x][y] = 'ninja';
+        //         }
+        //         }
+        //     }
+        // }, 0.5*1000);
+        endgame.style.display= 'block';
+        endgame.innerHTML = (`<div><h3>Game Over!</h3>The Ninja Assasins have found you!<div>`)
         endgame.innerHTML += (`<button id="restart" onclick="location.reload()">restart</button>`);
     }
 }
 function flag(element) {
-    element.style.backgroundImage = "url('ninja.gif')";
+    element.style.backgroundImage = "url('star.png')";
     element.style.backgroundSize = "contain";
     return false;
 }
@@ -189,5 +193,10 @@ console.log("%c" + "GOOD LUCK THIS IS A CHALLENGE!", style);
 
 // adds the rows of buttons into <div id="the-dojo"></div> 
 dojoDiv.innerHTML = render(theDojo);
+setTimeout(function () {
+    // alert('Welcome to DojoSweeper! Look out for Ninjas! Use the numbers uncovered by clicking the boxes to steer clear. The number represents the amount of ninjas adjacent to the box clicked. Right click to mark the boxes you suspect to hide Ninjas!');
+    alert('Welcome to DojoSweeper!\r\nInstructions: Numbers under boxes are ninjas adjacent to that box. Right click to throw shuriken at the Ninjas, and steer clear. Try to uncover all the bushes that the ninjas aren\'t hiding under. Good Luck!')
+},
+    0.5 * 1000)
 // shows the dojo for debugging purposes
 console.table(theDojo);

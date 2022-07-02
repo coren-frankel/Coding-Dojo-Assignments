@@ -4,6 +4,8 @@
     margin: 0;
     padding: 0;
     font-family: 'Press Start 2P', monospace;
+    background-color: slategrey;
+    color: yellow;
 }
     
 h2 {
@@ -19,16 +21,31 @@ h2 {
 }
 
 #gameover {
-    margin: 2%;
+    margin: 0 auto;
+    display: none;
+    width: 320px;
+    height: 320px;
+    position: fixed;
+    top: 12%;
+    left: 30%;
+    opacity: 90%;
+    color: whitesmoke;
+    -webkit-text-stroke: 1px black;
 }
     
 .tatami {
-    background-color: wheat;
+    background-color: forestgreen;
     height: 32px;
     width: 32px;
-    border: 2px solid #ccc;
-    border-right: 2px solid #999;
-    border-bottom: 2px solid #999;
+    border: 2px solid saddlebrown;
+    border-right: 2px solid saddlebrown;
+    border-bottom: 2px solid saddlebrown;
+    color:black;
+    -webkit-text-stroke: 1% white;
+}
+.bush {
+    background-image: url(bush.png);
+    background-size: contain;
 }
     
 .tatami:active {
