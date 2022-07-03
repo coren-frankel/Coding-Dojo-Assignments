@@ -9,22 +9,21 @@ const second = document.querySelector('#seconds');
 
 function getHourAngle(time){
     time %= 43200;
-    return ((360 * time / 43200) + 180) * 360;
+    return ((360 * time / 43200) + 180) % 360;
 }
 function getMinuteAngle(time){
-    time = time % 3600;
-    return ((3600 * time / 360) + 180) * 360;
+    time %= 3600;
+    return ((6 * time / 60) + 180) % 360;
 }
 function getSecondAngle(time){
-    time = time % 60;
-    console.log(time)
-    return((360 * time / 60) + 180) * 360;
+    time %= 60;
+    return((6 * time) + 180) % 360;
     
 }
 setInterval(function () {
     var time = getSecondsSinceStartOfDay();
     console.log(time);
-    hour.style.transform = `rotate(${getHourAngle(time)})`;
-    minute.style.transform = `rotate(${getMinuteAngle(time)})`;
-    second.style.transform = `rotate(${getSecondAngle(time)})`;
+    hour.style.transform = `rotate(${getHourAngle(time)}deg)`;
+    minute.style.transform = `rotate(${getMinuteAngle(time)}deg)`;
+    second.style.transform = `rotate(${getSecondAngle(time)}deg)`;
 }, 1000);
