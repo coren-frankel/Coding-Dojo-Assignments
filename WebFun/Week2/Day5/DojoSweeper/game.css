@@ -8,11 +8,15 @@
 }
 body {
     background-color: slategrey;
+    background-image: url('assets/forest.jpg');
+    background-size:cover;
 }   
 h2 {
     text-align: center;
     margin: 20px 0;
     color: yellow;
+    -webkit-text-stroke: 1px black;
+    -moz-text-stroke: 1px black;
 }
     
 #the-dojo {
@@ -23,31 +27,38 @@ h2 {
 }
 
 #gameover {
-    margin: -38% auto;
+    /* margin: auto auto; */
     display: none;
     flex-direction: column;
-    align-items: center;
-    
+    align-items:center;
+    justify-content: space-around;
+    margin: 0 auto;
     width: 320px;
     height: 320px;
-    position: relative;
-    opacity: 90%;
-    color: whitesmoke;
-    -webkit-text-stroke: 1px black;
+    position:relative;
+    top: -310px;
+    font-size: 85%;
+    opacity: 80%;
+    color: rgb(229, 229, 233);
+    -webkit-text-stroke: .5px white;
+    -moz-text-stroke: .5px white;
 }
-    
+h4 {
+    font-size: 150%;
+}  
 .tatami {
     background-color: forestgreen;
     height: 32px;
     width: 32px;
-    border: 2px solid saddlebrown;
-    border-right: 2px solid saddlebrown;
-    border-bottom: 2px solid saddlebrown;
+    border: 1px solid saddlebrown;
+    border-right: 1px solid saddlebrown;
+    border-bottom: 1px solid saddlebrown;
     color:black;
     -webkit-text-stroke: 1% white;
+    -moz-text-stroke: 1% white;
 }
 .bush {
-    background-image: url(bush.png);
+    background-image: url(assets/bush.png);
     background-size: contain;
 }
     
@@ -59,10 +70,22 @@ h2 {
 }
 
 #restart {
-    /* text-align: center; */
     width: 50%;
     height: 2em;
     border-radius: 15%;
     background-color: black;
     color: crimson;
+}
+a {
+    background-color: black;
+    margin: 1% auto;
+    font-size: 50%;
+    text-decoration: none;
+    color: ghostwhite;
+    -webkit-text-stroke: .1px slategrey;
+    -moz-text-stroke: .1px slategrey;
+    display: flex;
+    justify-content: center;
+    width: 21%;
+    
 }

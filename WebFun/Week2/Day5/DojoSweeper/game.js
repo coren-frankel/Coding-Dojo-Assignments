@@ -147,12 +147,12 @@ function howMany(i, j, element) {
         console.log(theDojo[i][j])
         if (gameClock == 90) {//Game clock tracks non-ninja squares uncovered
             endgame.style.display= 'flex';
-            endgame.innerHTML = (`<div><h3>Game Over!</h3>You evaded the ninjas, and live to see another day!<div>`)
+            endgame.innerHTML = (`<div><h4>Game Over!</h4>You evaded the ninjas, and will live to see another day! You take a Ninja's half-eaten sandwich and chomp peacefully into the Sunset.<div>`)
             endgame.innerHTML += (`<button id="restart" onclick="location.reload()">restart</button>`);
         }
     } else if (theDojo[i][j] == 'ninja') {
         // var doom = document.querySelectorAll('.tatami');
-        element.style.backgroundImage = "url('ninja.gif')";
+        element.style.backgroundImage = "url('assets/ninja.gif')";
         element.style.backgroundSize = "contain";
         // setTimeout(function () {
         //     for (var horde = 0; horde < 10; i++) {
@@ -171,18 +171,19 @@ function howMany(i, j, element) {
         endgame.style.display= 'flex';
         var deliver = Math.floor(Math.random()*3);
         if (deliver == 0) {
-            endgame.innerHTML = (`<div>You sneak up on a Ninja resting and eating a sandwich. A twig snaps beneath your toes and you\'re instantly spotted.<h3>Game Over!</h3><div>`)
+            endgame.innerHTML = (`<div>You sneak up on a Ninja resting and eating a sandwich. A twig snaps beneath your toes and you\'re instantly spotted.<h4>Game Over!</h4><div>`)
         } else if (deliver == 1) {
-            endgame.innerHTML = (`<div>Looks like you\'re up wind, because they just smelled you. The trees around you rustle  as the ninja swarm.<h3>Game Over!</h3><div>`)
+            endgame.innerHTML = (`<div>It appears that you\'re up-wind, because they just smelled you. The trees around you rustle  as the ninja swarm.<h4>Game Over!</h4><div>`)
         } else if (deliver == 2) {
-            endgame.innerHTML = (`<div>I think that smiley bush back there just coughed. The Ninja Assasins approach before you can blame the bush.<h3>Game Over!</h3><div>`)
+            endgame.innerHTML = (`<div>I think that smiley bush back there just sneezed. The Ninja Assasins approach before you can get away from the bush.<h4>Game Over!</h4><div>`)
         }
-        endgame.innerHTML = (`<div><h3>Game Over!</h3>The Ninja Assasins have found you!<div>`)
+        // endgame.innerHTML = (`<div><h4>Game Over!</h4>The Ninja Assasins have found you!<div>`)
         endgame.innerHTML += (`<button id="restart" onclick="location.reload()">restart</button>`);
+        endgame.style.display= 'flex';
     }
 }
 function flag(element) {
-    element.style.backgroundImage = "url('star.png')";
+    element.style.backgroundImage = "url('assets/star.png')";
     element.style.backgroundSize = "contain";
     return false;
 }
@@ -203,7 +204,7 @@ console.log("%c" + "GOOD LUCK THIS IS A CHALLENGE!", style);
 dojoDiv.innerHTML = render(theDojo);
 setTimeout(function () {
     // alert('Welcome to DojoSweeper! Look out for Ninjas! Use the numbers uncovered by clicking the boxes to steer clear. The number represents the amount of ninjas adjacent to the box clicked. Right click to mark the boxes you suspect to hide Ninjas!');
-    alert('Welcome to DojoSweeper!\r\nInstructions: Numbers under boxes are ninjas adjacent to that box. Right click to throw shuriken at the Ninjas, and steer clear. Try to uncover all the bushes that the ninjas aren\'t hiding under. Good Luck!')
+    alert('Welcome to NinjaSweeper!\r\nInstructions: Numbers under boxes are ninjas adjacent to that box. Right click to throw shuriken at the Ninjas, and steer clear. Try to uncover all the bushes that the ninjas aren\'t hiding under. Good Luck!')
 },
     0.5 * 1000)
 // shows the dojo for debugging purposes
