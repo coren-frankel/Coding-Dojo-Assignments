@@ -3,7 +3,7 @@ function mapChange() {
     for (var i = 1; i < 20; i++) {
         world[i] = [2];//Left wall
         for (var j = 1; j < 20; j++) {
-            var rand = Math.ceil(Math.random() * 9);
+            var rand = Math.ceil(Math.random() * 6);
             if (rand > 2) {
                 rand = 1;
             }
@@ -22,8 +22,8 @@ function mapChange() {
     world[8][9] = 2; world[8][10] = 2;//Top ghost wall
     world[9][11] = 2; world[10][11] = 2;//Right ghost wall
     world[11][10] = 2; world[11][9] = 0//ghost funnel
-    world[14][10] = 3
-    // setTimeout(function () { world[14][10] = 3 }, 10)
+    // world[14][10] = 3
+    var bonusInt = setInterval(function () { world[14][10] = 3; displayWorld() }, 30000)
     scoreCheck();
     return world
 }
@@ -71,26 +71,10 @@ function scoreCheck() {
         for (var j = 1; j < world[i].length - 1; j++) {
             if (world[i][j] == 1) {
                 total += 10;
+            } else if (world[i][j] == 3) {
+                total += 50;
             }
         }
-    }
-}
-function endGame() {
-    if (score >= total) {
-        clearInterval(myInt);
-        clearInterval(blinkyInt);
-        clearInterval(pinkyInt);
-        clearInterval(inkyInt);
-        clearInterval(clydeInt);
-        document.getElementById('gameOver').innerText = 'Wow, you escaped without any ectoplasm on you. Bummer. Also, you win!'
-
-    } else if (lives == 0) {
-        clearInterval(myInt);
-        clearInterval(blinkyInt);
-        clearInterval(pinkyInt);
-        clearInterval(inkyInt);
-        clearInterval(clydeInt);
-        document.getElementById('gameOver').innerText = 'Busted! A ghost stumbled upon to you unhinging your jaw for pizza. Shameful. Boo!'
     }
 }
 mapChange(); displayWorld();
@@ -103,7 +87,45 @@ var myInt;
 function displayPacman() {
     document.getElementById('pacman').style.top = pacman.y * 20 + "px";
     document.getElementById('pacman').style.left = pacman.x * 20 + "px";
+    if (score - 50 >= total) {
+        clearInterval(myInt);
+        clearInterval(blinkyInt);
+        clearInterval(pinkyInt);
+        clearInterval(inkyInt);
+        clearInterval(clydeInt);
+        clearInterval(bonusInt);
+        document.getElementById('gameOver').innerText = 'Wow, you escaped without any ectoplasm on you. Bummer. Also, you win!'
+    } else if (lives == 0) {
+        clearInterval(myInt);
+        clearInterval(blinkyInt);
+        clearInterval(pinkyInt);
+        clearInterval(inkyInt);
+        clearInterval(clydeInt);
+        clearInterval(bonusInt);
+        document.getElementById('gameOver').innerText = 'Busted! A ghost got you as you were swallowing a slice whole. Shameful. Boo!'
+    }
 }
+// function displayPacmanJr() {
+//     document.getElementById('pacmanJr').style.top = pacmanJr.y * 20 + "px";
+//     document.getElementById('pacmanJr').style.left = pacmanJr.x * 20 + "px";
+//     if (score - 50 >= total) {
+//         clearInterval(myInt);
+//         clearInterval(blinkyInt);
+//         clearInterval(pinkyInt);
+//         clearInterval(inkyInt);
+//         clearInterval(clydeInt);
+//         clearInterval(bonusInt);
+//         document.getElementById('gameOver').innerText = 'Wow, you escaped without any ectoplasm on you. Bummer. Also, you win!'
+//     } else if (lives == 0) {
+//         clearInterval(myInt);
+//         clearInterval(blinkyInt);
+//         clearInterval(pinkyInt);
+//         clearInterval(inkyInt);
+//         clearInterval(clydeInt);
+//         clearInterval(bonusInt);
+//         document.getElementById('gameOver').innerText = 'Busted! A ghost got you as you were swallowing a slice whole. Shameful. Boo!'
+//     }
+// }
 function displayBlinky() {
     document.getElementById('blinky').style.top = blinky.y * 20 + "px";
     document.getElementById('blinky').style.left = blinky.x * 20 + "px";
@@ -120,9 +142,20 @@ function displayClyde() {
     document.getElementById('clyde').style.top = clyde.y * 20 + "px";
     document.getElementById('clyde').style.left = clyde.x * 20 + "px";
 }
+function displayClyde() {
+    document.getElementById('clyde').style.top = clyde.y * 20 + "px";
+    document.getElementById('clyde').style.left = clyde.x * 20 + "px";
+}
 
 var blinkyInt = setInterval(function () { //blinky random movement generator
     var move = Math.ceil(Math.random() * 4);
+    if ((pacman.y === blinky.y) && (pacman.x === blinky.x)) {
+        clearInterval(myInt);
+        pacman.x = 1; pacman.y = 1; --lives;
+        blinky.x = 9; blinky.y = 10;
+        displayPacman(); displayBlinky();
+        document.getElementById('lives').innerText = "Lives:" + lives;
+    }
     if ((move == 1) && (world[blinky.y + 1][blinky.x] != 2)) {
         blinky.y++;
         displayBlinky();
@@ -137,9 +170,16 @@ var blinkyInt = setInterval(function () { //blinky random movement generator
         displayBlinky();
     }
 
-}, 200);
+}, 150);
 var pinkyInt = setInterval(function () { //pinky random movement generator
     var move = Math.ceil(Math.random() * 4);
+    if ((pacman.y === pinky.y) && (pacman.x === pinky.x)) {
+        clearInterval(myInt);
+        pacman.x = 1; pacman.y = 1; --lives;
+        pinky.x = 10; pinky.y = 9;
+        displayPacman(); displayPinky();
+        document.getElementById('lives').innerText = "Lives:" + lives;
+    }
     if ((move == 1) && (world[pinky.y + 1][pinky.x] != 2)) {
         pinky.y++;
         displayPinky();
@@ -154,9 +194,16 @@ var pinkyInt = setInterval(function () { //pinky random movement generator
         displayPinky();
     }
 
-}, 200);
+}, 150);
 var inkyInt = setInterval(function () { //inky random movement generator
     var move = Math.ceil(Math.random() * 4);
+    if ((pacman.y === inky.y) && (pacman.x === inky.x)) {
+        clearInterval(myInt);
+        pacman.x = 1; pacman.y = 1; --lives;
+        inky.x = 10; inky.y = 10;
+        displayPacman(); displayInky();
+        document.getElementById('lives').innerText = "Lives:" + lives;
+    }
     if ((move == 1) && (world[inky.y + 1][inky.x] != 2)) {
         inky.y++;
         displayInky();
@@ -171,9 +218,16 @@ var inkyInt = setInterval(function () { //inky random movement generator
         displayInky();
     }
 
-}, 200);
+}, 150);
 var clydeInt = setInterval(function () { //clyde random movement generator
     var move = Math.ceil(Math.random() * 4);
+    if ((pacman.y === clyde.y) && (pacman.x === clyde.x)) {
+        clearInterval(myInt);
+        pacman.x = 1; pacman.y = 1; --lives;
+        clyde.x = 9; clyde.y = 9;
+        displayPacman(); displayClyde();
+        document.getElementById('lives').innerText = "Lives:" + lives;
+    }
     if ((move == 1) && (world[clyde.y + 1][clyde.x] != 2)) {
         clyde.y++;
         displayClyde();
@@ -187,12 +241,7 @@ var clydeInt = setInterval(function () { //clyde random movement generator
         clyde.x--;
         displayClyde();
     }
-
-}, 200);
-
-
-
-
+}, 150);
 document.onkeydown = function (e) {//Pacman control
     if (e.keyCode == 40 && world[pacman.y + 1][pacman.x] != 2) {//down
         clearInterval(myInt);//halt movement from other keydown
@@ -264,32 +313,5 @@ document.onkeydown = function (e) {//Pacman control
                 document.getElementById('score').innerText = 'Score:' + score;
             }
         }, 100);
-    }
-    if ((pacman.y === blinky.y) && (pacman.x === blinky.x)) {
-        clearInterval(myInt);
-        pacman.x = 1; pacman.y = 1; --lives;
-        blinky.x = 9; blinky.y = 10;
-        displayPacman(); displayBlinky();
-        document.getElementById('lives').innerText = "Lives:" + lives;
-    } else if ((pacman.y === pinky.y) && (pacman.x === pinky.x)) {
-        clearInterval(myInt);
-        pacman.x = 1; pacman.y = 1; --lives;
-        pinky.x = 10; pinky.y = 9;
-        displayPacman(); displayPinky();
-        document.getElementById('lives').innerText = "Lives:" + lives;
-    } else if ((pacman.y === inky.y) && (pacman.x === inky.x)) {
-        clearInterval(myInt);
-        pacman.x = 1; pacman.y = 1; --lives;
-        inky.x = 10; inky.y = 10;
-        displayPacman(); displayInky();
-        document.getElementById('lives').innerText = "Lives:" + lives;
-    } else if ((pacman.y === clyde.y) && (pacman.x === clyde.x)) {
-        clearInterval(myInt);
-        pacman.x = 1; pacman.y = 1; --lives;
-        clyde.x = 9; clyde.y = 9;
-        displayPacman(); displayClyde();
-        document.getElementById('lives').innerText = "Lives:" + lives;
-    } else {
-        endGame();
     }
 }

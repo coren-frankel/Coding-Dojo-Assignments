@@ -38,7 +38,7 @@ div.cherry {
     width: 20px;
     height: 20px;
     position: absolute;
-    transition: 200ms;
+    transition: 100ms;
     
 }
 #blinky {
