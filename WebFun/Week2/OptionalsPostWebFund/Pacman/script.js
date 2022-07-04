@@ -93,7 +93,7 @@ function displayPacman() {
         clearInterval(pinkyInt);
         clearInterval(inkyInt);
         clearInterval(clydeInt);
-        clearInterval(bonusInt);
+        // clearInterval(bonusInt);
         document.getElementById('gameOver').innerText = 'Wow, you escaped without any ectoplasm on you. Bummer. Also, you win!'
     } else if (lives == 0) {
         clearInterval(myInt);
@@ -101,7 +101,7 @@ function displayPacman() {
         clearInterval(pinkyInt);
         clearInterval(inkyInt);
         clearInterval(clydeInt);
-        clearInterval(bonusInt);
+        // clearInterval(bonusInt);
         document.getElementById('gameOver').innerText = 'Busted! A ghost got you as you were swallowing a slice whole. Shameful. Boo!'
     }
 }
