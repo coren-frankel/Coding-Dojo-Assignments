@@ -21,7 +21,9 @@ function mapChange() {
     world[9][8] = 2; world[10][8] = 2;//Left ghost wall
     world[8][9] = 2; world[8][10] = 2;//Top ghost wall
     world[9][11] = 2; world[10][11] = 2;//Right ghost wall
-    world[11][10] = 2;//ghost funnel
+    world[11][10] = 2; world[11][9] = 0//ghost funnel
+    world[14][10] = 3
+    // setTimeout(function () { world[14][10] = 3 }, 10)
     scoreCheck();
     return world
 }
@@ -36,6 +38,8 @@ function displayWorld() {
                 output += "<div class='coin'></div>";
             if (world[i][j] == 0)
                 output += "<div class='empty'></div>";
+            if (world[i][j] == 3)
+                output += "<div class='cherry'></div>"
         }
         output += "\n</div>";
     }
@@ -72,15 +76,15 @@ function scoreCheck() {
     }
 }
 function endGame() {
-    if (score == total) {
+    if (score >= total) {
         clearInterval(myInt);
         clearInterval(blinkyInt);
         clearInterval(pinkyInt);
         clearInterval(inkyInt);
         clearInterval(clydeInt);
         document.getElementById('gameOver').innerText = 'Wow, you escaped without any ectoplasm on you. Bummer. Also, you win!'
-        
-    } else if (lives == 0){
+
+    } else if (lives == 0) {
         clearInterval(myInt);
         clearInterval(blinkyInt);
         clearInterval(pinkyInt);
@@ -117,74 +121,74 @@ function displayClyde() {
     document.getElementById('clyde').style.left = clyde.x * 20 + "px";
 }
 
-var blinkyInt = setInterval(function() { 
-    var move = Math.ceil(Math.random()*4);
-    if ((move == 1) && (world[blinky.y+1][blinky.x] != 2)){
+var blinkyInt = setInterval(function () { //blinky random movement generator
+    var move = Math.ceil(Math.random() * 4);
+    if ((move == 1) && (world[blinky.y + 1][blinky.x] != 2)) {
         blinky.y++;
         displayBlinky();
-    } else if ((move == 2) && (world[blinky.y-1][blinky.x] != 2)){
+    } else if ((move == 2) && (world[blinky.y - 1][blinky.x] != 2)) {
         blinky.y--;
         displayBlinky();
-    } else if ((move == 3) && (world[blinky.y][blinky.x+1] != 2)){
+    } else if ((move == 3) && (world[blinky.y][blinky.x + 1] != 2)) {
         blinky.x++;
         displayBlinky();
-    } else if ((move == 4) && (world[blinky.y][blinky.x-1] != 2)){
+    } else if ((move == 4) && (world[blinky.y][blinky.x - 1] != 2)) {
         blinky.x--;
         displayBlinky();
     }
-    
-}, 100);
-var pinkyInt = setInterval(function() { 
-    var move = Math.ceil(Math.random()*4);
-    if ((move == 1) && (world[pinky.y+1][pinky.x] != 2)){
+
+}, 200);
+var pinkyInt = setInterval(function () { //pinky random movement generator
+    var move = Math.ceil(Math.random() * 4);
+    if ((move == 1) && (world[pinky.y + 1][pinky.x] != 2)) {
         pinky.y++;
         displayPinky();
-    } else if ((move == 2) && (world[pinky.y-1][pinky.x] != 2)){
+    } else if ((move == 2) && (world[pinky.y - 1][pinky.x] != 2)) {
         pinky.y--;
         displayPinky();
-    } else if ((move == 3) && (world[pinky.y][pinky.x+1] != 2)){
+    } else if ((move == 3) && (world[pinky.y][pinky.x + 1] != 2)) {
         pinky.x++;
         displayPinky();
-    } else if ((move == 4) && (world[pinky.y][pinky.x-1] != 2)){
+    } else if ((move == 4) && (world[pinky.y][pinky.x - 1] != 2)) {
         pinky.x--;
         displayPinky();
     }
-    
-}, 100);
-var inkyInt = setInterval(function() { 
-    var move = Math.ceil(Math.random()*4);
-    if ((move == 1) && (world[inky.y+1][inky.x] != 2)){
+
+}, 200);
+var inkyInt = setInterval(function () { //inky random movement generator
+    var move = Math.ceil(Math.random() * 4);
+    if ((move == 1) && (world[inky.y + 1][inky.x] != 2)) {
         inky.y++;
         displayInky();
-    } else if ((move == 2) && (world[inky.y-1][inky.x] != 2)){
+    } else if ((move == 2) && (world[inky.y - 1][inky.x] != 2)) {
         inky.y--;
         displayInky();
-    } else if ((move == 3) && (world[inky.y][inky.x+1] != 2)){
+    } else if ((move == 3) && (world[inky.y][inky.x + 1] != 2)) {
         inky.x++;
         displayInky();
-    } else if ((move == 4) && (world[inky.y][inky.x-1] != 2)){
+    } else if ((move == 4) && (world[inky.y][inky.x - 1] != 2)) {
         inky.x--;
         displayInky();
     }
-    
-}, 100);
-var clydeInt = setInterval(function() { 
-    var move = Math.ceil(Math.random()*4);
-    if ((move == 1) && (world[clyde.y+1][clyde.x] != 2)){
+
+}, 200);
+var clydeInt = setInterval(function () { //clyde random movement generator
+    var move = Math.ceil(Math.random() * 4);
+    if ((move == 1) && (world[clyde.y + 1][clyde.x] != 2)) {
         clyde.y++;
         displayClyde();
-    } else if ((move == 2) && (world[clyde.y-1][clyde.x] != 2)){
+    } else if ((move == 2) && (world[clyde.y - 1][clyde.x] != 2)) {
         clyde.y--;
         displayClyde();
-    } else if ((move == 3) && (world[clyde.y][clyde.x+1] != 2)){
+    } else if ((move == 3) && (world[clyde.y][clyde.x + 1] != 2)) {
         clyde.x++;
         displayClyde();
-    } else if ((move == 4) && (world[clyde.y][clyde.x-1] != 2)){
+    } else if ((move == 4) && (world[clyde.y][clyde.x - 1] != 2)) {
         clyde.x--;
         displayClyde();
     }
-    
-}, 100);
+
+}, 200);
 
 
 
@@ -194,14 +198,18 @@ document.onkeydown = function (e) {//Pacman control
         clearInterval(myInt);//halt movement from other keydown
         myInt = setInterval(function () {//repeat direction movement
             if (world[pacman.y + 1][pacman.x] != 2) {//until hitting a wall
-                pacman.y++; if ((world[pacman.y][pacman.x]) == 1) {//eat pizza and leave block empty
+                pacman.y++;
+                if ((world[pacman.y][pacman.x]) == 1) {//eat pizza and leave block empty
                     world[pacman.y][pacman.x] = 0;
                     displayWorld();
                     score += 10;
+                } else if ((world[pacman.y][pacman.x]) == 3) {
+                    world[pacman.y][pacman.x] = 0;
+                    displayWorld();
+                    score += 50;
                 }
                 displayPacman();
                 document.getElementById('score').innerText = 'Score:' + score;//keep score
-
             }
         }, 100);
         turn.style.transform = 'rotate(90deg)';//turn to face new direction
@@ -213,10 +221,13 @@ document.onkeydown = function (e) {//Pacman control
                     world[pacman.y][pacman.x] = 0;
                     displayWorld();
                     score += 10;
+                } else if ((world[pacman.y][pacman.x]) == 3) {
+                    world[pacman.y][pacman.x] = 0;
+                    displayWorld();
+                    score += 50;
                 }
                 displayPacman();
                 document.getElementById('score').innerText = 'Score:' + score;
-
             }
         }, 100);
     } else if (e.keyCode == 37 && world[pacman.y][pacman.x - 1] != 2) {//left
@@ -227,10 +238,13 @@ document.onkeydown = function (e) {//Pacman control
                     world[pacman.y][pacman.x] = 0;
                     displayWorld();
                     score += 10;
+                } else if ((world[pacman.y][pacman.x]) == 3) {
+                    world[pacman.y][pacman.x] = 0;
+                    displayWorld();
+                    score += 50;
                 }
                 displayPacman();
                 document.getElementById('score').innerText = 'Score:' + score;
-
             }
         }, 100);
     } else if (e.keyCode == 39 && world[pacman.y][pacman.x + 1] != 2) {//right
@@ -241,6 +255,10 @@ document.onkeydown = function (e) {//Pacman control
                     world[pacman.y][pacman.x] = 0;
                     displayWorld();
                     score += 10;
+                } else if ((world[pacman.y][pacman.x]) == 3) {
+                    world[pacman.y][pacman.x] = 0;
+                    displayWorld();
+                    score += 50;
                 }
                 displayPacman();
                 document.getElementById('score').innerText = 'Score:' + score;
@@ -250,29 +268,28 @@ document.onkeydown = function (e) {//Pacman control
     if ((pacman.y === blinky.y) && (pacman.x === blinky.x)) {
         clearInterval(myInt);
         pacman.x = 1; pacman.y = 1; --lives;
-        displayPacman();
-        
+        blinky.x = 9; blinky.y = 10;
+        displayPacman(); displayBlinky();
         document.getElementById('lives').innerText = "Lives:" + lives;
     } else if ((pacman.y === pinky.y) && (pacman.x === pinky.x)) {
         clearInterval(myInt);
         pacman.x = 1; pacman.y = 1; --lives;
-        displayPacman();
-        
+        pinky.x = 10; pinky.y = 9;
+        displayPacman(); displayPinky();
         document.getElementById('lives').innerText = "Lives:" + lives;
     } else if ((pacman.y === inky.y) && (pacman.x === inky.x)) {
         clearInterval(myInt);
         pacman.x = 1; pacman.y = 1; --lives;
-        displayPacman();
-        
+        inky.x = 10; inky.y = 10;
+        displayPacman(); displayInky();
         document.getElementById('lives').innerText = "Lives:" + lives;
     } else if ((pacman.y === clyde.y) && (pacman.x === clyde.x)) {
         clearInterval(myInt);
         pacman.x = 1; pacman.y = 1; --lives;
-        displayPacman();
-        
+        clyde.x = 9; clyde.y = 9;
+        displayPacman(); displayClyde();
         document.getElementById('lives').innerText = "Lives:" + lives;
     } else {
         endGame();
     }
-    
 }

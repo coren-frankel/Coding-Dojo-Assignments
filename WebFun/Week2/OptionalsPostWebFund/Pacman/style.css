@@ -28,13 +28,17 @@ div.coin {
     background: url('assets/slice.gif');
     background-size: contain;
 }
+div.cherry {
+    background: url('assets/cherry.png');
+    background-size: contain;
+}
 #pacman {
     background: url('assets/pacman.gif');
     background-size: cover;
     width: 20px;
     height: 20px;
     position: absolute;
-    transition: 150ms
+    transition: 200ms;
     
 }
 #blinky {
@@ -43,7 +47,7 @@ div.coin {
     width: 20px;
     height: 20px;
     position: absolute;
-    transition: 250ms;
+    transition: 200ms;
     background-repeat: no-repeat;
 }
 #pinky {
@@ -52,7 +56,7 @@ div.coin {
     width: 20px;
     height: 20px;
     position: absolute;
-    transition: 250ms;
+    transition: 200ms;
     background-repeat: no-repeat;
 }
 #inky {
@@ -61,7 +65,7 @@ div.coin {
     width: 20px;
     height: 20px;
     position: absolute;
-    transition: 250ms;
+    transition: 200ms;
     background-repeat: no-repeat;
 }
 #clyde {
@@ -70,7 +74,7 @@ div.coin {
     width: 20px;
     height: 20px;
     position: absolute;
-    transition: 250ms;
+    transition: 200ms;
     background-repeat: no-repeat;
 }
 #scoreboard {
