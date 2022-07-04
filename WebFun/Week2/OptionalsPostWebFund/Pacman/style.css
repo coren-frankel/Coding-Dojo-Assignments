@@ -4,8 +4,18 @@
     line-height: 0;
     font-family: 'Press Start 2P', sans-serif;
 }
+
 body {
     background-color: black;
+}
+#container {
+    /* display: flex; */
+    /* flex-direction: column; */
+    align-items: center;
+    margin: 0 auto;
+}
+#world {
+    
 }
 div.row div {
     width: 20px;
@@ -18,7 +28,7 @@ div.brick {
     /* border-radius: 25%; */
 }
 div.coin {
-    background: url('assets/gold.gif');
+    background: url('assets/slice.gif');
     background-size: contain;
 }
 #pacman {
@@ -77,14 +87,13 @@ div#score {
     left: 420px;
     margin: 10px;
 }
-#gameOver {
+#gameOver { 
     color: aliceblue;
-    display: inline-flex;
-    position: relative;
-    top: 20px;
-    font-size: 50%;
-    /* flex-wrap: wrap; */
-    width: 65%;
-    justify-content: center;
+    display: flex;
+    font-size: 70%;
+    /* margin: 10px; */
+    /* width: 100%; */
+    /* height: 100%; */
+    /* justify-content: center; */
     
 }

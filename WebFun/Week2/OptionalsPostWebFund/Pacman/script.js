@@ -91,6 +91,10 @@ console.log(world);
 function displayPacman() {
     document.getElementById('pacman').style.top = pacman.y * 20 + "px";
     document.getElementById('pacman').style.left = pacman.x * 20 + "px";
+    if (world[pacman.y][pacman.x] == world[blinky.y][blinky.x]){
+        
+    }
+
 }
 function displayBlinky() {
     document.getElementById('blinky').style.top = blinky.y * 20 + "px";
@@ -109,7 +113,7 @@ function displayClyde() {
     document.getElementById('clyde').style.left = clyde.x * 20 + "px";
 }
 var turn = document.getElementById('pacman');
-var score = 0;
+var score = 0; lives = 3;
 var myInt;
 document.onkeydown = function (e) {
     if (e.keyCode == 40 && world[pacman.y + 1][pacman.x] != 2) {//down
